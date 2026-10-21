@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CineSphere Pro | Next-Gen Cinema & TV Discovery</title>
+  <title>CineSphere Pro | The 1,000+ Film & TV Discovery Vault</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
     tailwind.config = {
@@ -22,9 +22,9 @@
             brand: {
               gold: '#F5C518',
               amber: '#FF9900',
-              dark: '#090B10',
-              card: '#121620',
-              border: '#1F2637'
+              dark: '#080A0F',
+              card: '#111520',
+              border: '#1E2538'
             }
           }
         }
@@ -33,91 +33,131 @@
   </script>
   <style>
     body {
-      background-color: #090B10;
+      background-color: #080A0F;
       color: #F3F4F6;
       overflow-x: hidden;
     }
-    /* Custom sleek scrollbars */
+    html {
+      scroll-behavior: smooth;
+    }
     ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
     }
     ::-webkit-scrollbar-track {
-      background: #090B10;
+      background: #080A0F;
     }
     ::-webkit-scrollbar-thumb {
-      background: #262f45;
+      background: #232B3E;
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #F5C518;
     }
     .glass-nav {
-      background: rgba(9, 11, 16, 0.82);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(8, 10, 15, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
     .glass-card {
-      background: rgba(18, 22, 32, 0.75);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(17, 21, 32, 0.78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .poster-aspect {
       aspect-ratio: 2 / 3;
     }
     .card-hover {
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease;
+      will-change: transform;
     }
     .card-hover:hover {
-      transform: translateY(-6px) scale(1.015);
-      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(245, 197, 24, 0.12);
-      border-color: rgba(245, 197, 24, 0.35);
+      transform: translateY(-6px) scale(1.018);
+      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.85), 0 0 22px rgba(245, 197, 24, 0.15);
+      border-color: rgba(245, 197, 24, 0.4);
     }
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.8; }
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.75; transform: scale(1.04); }
     }
     .hero-glow {
-      animation: pulseGlow 6s ease-in-out infinite;
+      animation: pulseGlow 7s ease-in-out infinite;
     }
     .fade-in {
-      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: fadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
-  
-html{scroll-behavior:smooth}
-.lazy-poster{transition:opacity .45s ease,transform .5s ease!important}
-.animate-fadeIn{animation:fadeIn .3s cubic-bezier(.16,1,.3,1)}
-#heroBanner>div{animation:fadeIn .6s cubic-bezier(.16,1,.3,1)}
-.hscroll,.snap-x{scroll-behavior:smooth;scrollbar-width:thin}
-.has-arrows{position:relative}
-.row-arrow{position:absolute;top:55%;z-index:5;width:40px;height:40px;border-radius:9999px;background:rgba(9,11,16,.88);border:1px solid rgba(255,255,255,.15);color:#fff;opacity:0;transition:all .25s}
-.has-arrows:hover .row-arrow{opacity:1}.row-arrow:hover{background:#F5C518;color:#000}
-@media(hover:none){.row-arrow{display:none}}
-button,select,input{transition:all .2s ease}
-:focus-visible{outline:2px solid #F5C518;outline-offset:2px}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
+    .lazy-poster {
+      transition: opacity 0.4s ease, transform 0.45s ease !important;
+    }
+    .hscroll, .snap-x {
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+    }
+    .has-arrows {
+      position: relative;
+    }
+    .row-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      width: 42px;
+      height: 42px;
+      border-radius: 9999px;
+      background: rgba(8, 10, 15, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+      opacity: 0;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .has-arrows:hover .row-arrow {
+      opacity: 1;
+    }
+    .row-arrow:hover {
+      background: #F5C518;
+      color: #000;
+      border-color: #F5C518;
+      transform: translateY(-50%) scale(1.1);
+    }
+    @media (hover: none) {
+      .row-arrow { display: none !important; }
+    }
+    .roulette-blur {
+      filter: blur(1.5px);
+      transform: scale(0.97);
+    }
+    :focus-visible {
+      outline: 2px solid #F5C518;
+      outline-offset: 2px;
+    }
+  </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-brand-gold selection:text-black">
+<body class="min-h-screen flex flex-col selection:bg-brand-gold selection:text-black antialiased">
 
   <header class="glass-nav sticky top-0 z-40 border-b border-white/10 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+      
       <!-- Brand Logo -->
       <div class="flex items-center gap-3 cursor-pointer group" onclick="switchTab('discover')">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-gold to-amber-600 flex items-center justify-center text-black font-black text-xl shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-gold via-amber-500 to-amber-600 flex items-center justify-center text-black font-black text-xl shadow-lg shadow-brand-gold/25 group-hover:rotate-6 group-hover:scale-105 transition-all">
           <i class="fa-solid fa-film"></i>
         </div>
         <div>
-          <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">Cine<span class="text-brand-gold">Sphere</span></span>
-          <span class="hidden sm:inline-block ml-1.5 text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-brand-gold/15 text-brand-gold border border-brand-gold/30">Pro</span>
+          <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-white">Cine<span class="text-brand-gold">Sphere</span></span>
+          <span class="hidden sm:inline-block ml-1.5 text-[10px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-full bg-brand-gold/20 text-brand-gold border border-brand-gold/40">1000+ Vault</span>
         </div>
       </div>
 
-      <!-- Navigation Links -->
+      <!-- Navigation Tabs -->
       <nav class="flex items-center gap-1 sm:gap-2 bg-white/5 p-1.5 rounded-2xl border border-white/10 overflow-x-auto max-w-full">
         <button onclick="switchTab('discover')" id="nav-discover" class="nav-pill px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-brand-gold text-black shadow-md">
           <i class="fa-solid fa-compass"></i> <span>Discover</span>
@@ -139,14 +179,13 @@ button,select,input{transition:all .2s ease}
 
       <!-- Utility Actions -->
       <div class="flex items-center gap-2">
-        <button onclick="openPalette()" title="Quick search (Ctrl/⌘+K)" class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm text-gray-300 flex items-center gap-2"><i class="fa-solid fa-magnifying-glass"></i><span class="hidden lg:inline">Search <kbd class="ml-1 text-[10px] px-1.5 py-0.5 rounded bg-white/10">⌘K</kbd></span></button>
-        <button onclick="surpriseMe()" title="Surprise Me with a Random Masterpiece" class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-medium text-brand-gold flex items-center gap-2 transition-all active:scale-95">
-          <i class="fa-solid fa-dice text-base"></i>
-          <span class="hidden lg:inline">Surprise Me</span>
+        <button onclick="openPalette()" title="Search catalog (⌘K or /)" class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm text-gray-300 hover:text-white flex items-center gap-2 transition-all">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="hidden lg:inline">Quick Search <kbd class="ml-1 text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-gray-400">⌘K</kbd></span>
         </button>
-        <button onclick="openApiModal()" title="Poster Artwork Settings" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all relative">
-          <i class="fa-solid fa-image"></i>
-          <span id="apiActiveDot" class="w-2 h-2 rounded-full bg-emerald-400 absolute top-1.5 right-1.5"></span>
+        <button onclick="openSurpriseModal()" title="Surprise Me Roulette" class="p-2.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-brand-gold to-amber-500 hover:from-amber-400 hover:to-brand-gold border border-brand-gold/30 text-xs sm:text-sm font-bold text-black flex items-center gap-2 shadow-lg shadow-brand-gold/20 transition-all active:scale-95">
+          <i class="fa-solid fa-dice text-base animate-spin-slow"></i>
+          <span class="hidden sm:inline">Surprise Me</span>
         </button>
       </div>
     </div>
@@ -154,22 +193,23 @@ button,select,input{transition:all .2s ease}
 
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
 
-    <!-- TAB 0: DISCOVER (NEW HOME EXPERIENCE) -->
+    <!-- TAB 0: DISCOVER -->
     <section id="tab-discover" class="tab-pane fade-in space-y-10">
-      <!-- Dynamic Hero Banner -->
-      <div id="heroBanner" class="relative rounded-3xl overflow-hidden border border-white/15 bg-brand-card min-h-[360px] sm:min-h-[420px] flex items-end p-6 sm:p-10 shadow-2xl">
-        <!-- Populated dynamically via JS -->
+      
+      <!-- Dynamic Featured Hero Spotlight Banner -->
+      <div id="heroBanner" class="relative rounded-3xl overflow-hidden border border-white/15 bg-brand-card min-h-[380px] sm:min-h-[440px] flex items-end p-6 sm:p-10 shadow-2xl transition-all duration-700">
+        <!-- Injected via JavaScript -->
       </div>
 
-      <!-- Quick Stats Bar -->
+      <!-- Quick Stats Metrics -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-        <div class="glass-card p-4 rounded-2xl flex items-center gap-3.5">
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-3.5 border border-white/10">
           <div class="w-11 h-11 rounded-xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-lg">
-            <i class="fa-solid fa-trophy"></i>
+            <i class="fa-solid fa-layer-group"></i>
           </div>
           <div>
-            <div class="text-xl sm:text-2xl font-display font-bold text-white" id="statTotalTitles">300</div>
-            <div class="text-xs text-gray-400">Movies & Shows Indexed</div>
+            <div class="text-xl sm:text-2xl font-display font-extrabold text-white" id="statTotalTitles">1,000+</div>
+            <div class="text-xs text-gray-400">Films & Shows Indexed</div>
           </div>
         </div>
         <div class="glass-card p-4 rounded-2xl flex items-center gap-3.5 cursor-pointer hover:border-rose-500/40 transition-all" onclick="switchTab('hub')">
@@ -177,7 +217,7 @@ button,select,input{transition:all .2s ease}
             <i class="fa-solid fa-heart"></i>
           </div>
           <div>
-            <div class="text-xl sm:text-2xl font-display font-bold text-white" id="statWatchlistCount">0</div>
+            <div class="text-xl sm:text-2xl font-display font-extrabold text-white" id="statWatchlistCount">0</div>
             <div class="text-xs text-gray-400">Saved in Watchlist</div>
           </div>
         </div>
@@ -186,104 +226,144 @@ button,select,input{transition:all .2s ease}
             <i class="fa-solid fa-circle-check"></i>
           </div>
           <div>
-            <div class="text-xl sm:text-2xl font-display font-bold text-white" id="statWatchedCount">0</div>
+            <div class="text-xl sm:text-2xl font-display font-extrabold text-white" id="statWatchedCount">0</div>
             <div class="text-xs text-gray-400">Titles Marked Watched</div>
           </div>
         </div>
         <div class="glass-card p-4 rounded-2xl flex items-center gap-3.5 cursor-pointer hover:border-purple-500/40 transition-all" onclick="switchTab('hub'); document.getElementById('recSection').scrollIntoView({behavior:'smooth'})">
           <div class="w-11 h-11 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg">
-            <i class="fa-solid fa-brain"></i>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
           </div>
           <div>
-            <div class="text-sm sm:text-base font-display font-bold text-white">Smart Match</div>
-            <div class="text-xs text-gray-400">AI-Like Taste Engine →</div>
+            <div class="text-sm sm:text-base font-display font-bold text-white">Taste DNA</div>
+            <div class="text-xs text-gray-400">Smart Match Engine →</div>
           </div>
         </div>
       </div>
 
-      <!-- Curated Row 1: All-Time Pantheon -->
+      <!-- Mood Vibe Selector -->
       <div class="space-y-4">
         <div class="flex items-center justify-between">
           <div>
             <h2 class="text-xl sm:text-2xl font-display font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-crown text-brand-gold"></i> The 9.0+ Pantheon
+              <i class="fa-solid fa-masks-theater text-rose-400"></i> What's Your Mood Tonight?
             </h2>
-            <p class="text-xs sm:text-sm text-gray-400">Critically immortal films & series rated 9.0 or higher</p>
+            <p class="text-xs sm:text-sm text-gray-400">Instant mood-based curations pulled across our entire 1,000+ title database</p>
+          </div>
+        </div>
+        <div id="moodPills" class="flex flex-wrap gap-2"></div>
+        <div class="has-arrows">
+          <div id="moodRow" class="hscroll flex gap-4 overflow-x-auto pb-4 pt-1 snap-x"></div>
+        </div>
+      </div>
+
+      <!-- Curated Row 1: The 9.0+ Pantheon -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-display font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-crown text-brand-gold"></i> The 9.0+ All-Time Pantheon
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-400">Universally acclaimed cinematic and television masterpieces</p>
           </div>
           <button onclick="switchTab('movies')" class="text-xs sm:text-sm text-brand-gold hover:underline font-semibold flex items-center gap-1">
-            Explore All <i class="fa-solid fa-arrow-right text-xs"></i>
+            Browse All <i class="fa-solid fa-arrow-right text-xs"></i>
           </button>
         </div>
-        <div id="discoverPantheonRow" class="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x"></div>
+        <div class="has-arrows">
+          <div id="discoverPantheonRow" class="hscroll flex gap-4 overflow-x-auto pb-4 pt-1 snap-x"></div>
+        </div>
       </div>
 
-      <!-- Curated Row 2: Mind-Bending Sci-Fi & Thrillers -->
+      <!-- Curated Row 2: Blockbuster Franchises & Pop Culture Giants -->
       <div class="space-y-4">
         <div class="flex items-center justify-between">
           <div>
             <h2 class="text-xl sm:text-2xl font-display font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-atom text-cyan-400"></i> Mind-Benders & Thrillers
+              <i class="fa-solid fa-fire text-amber-500"></i> Blockbuster Giants & Pop Culture Hits
             </h2>
-            <p class="text-xs sm:text-sm text-gray-400">High-tension narratives, plot twists, and cerebral sci-fi</p>
+            <p class="text-xs sm:text-sm text-gray-400">Crowd favorites, superhero sagas, high-octane blockbusters & box office sensations</p>
+          </div>
+        </div>
+        <div class="has-arrows">
+          <div id="discoverBlockbustersRow" class="hscroll flex gap-4 overflow-x-auto pb-4 pt-1 snap-x"></div>
+        </div>
+      </div>
+
+      <!-- Curated Row 3: Mind-Benders & Edge-of-Seat Thrillers -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-display font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-atom text-cyan-400"></i> Mind-Benders, Sci-Fi & Psychological Thrillers
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-400">Twists, alternate realities, high concept sci-fi, and deep mysteries</p>
           </div>
           <button onclick="switchTab('categories')" class="text-xs sm:text-sm text-brand-gold hover:underline font-semibold flex items-center gap-1">
             All Genres <i class="fa-solid fa-arrow-right text-xs"></i>
           </button>
         </div>
-        <div id="discoverMindRow" class="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x"></div>
+        <div class="has-arrows">
+          <div id="discoverMindRow" class="hscroll flex gap-4 overflow-x-auto pb-4 pt-1 snap-x"></div>
+        </div>
       </div>
 
-      <!-- Curated Row 3: Prestige Television -->
+      <!-- Curated Row 4: Prestige Binge-Worthy Television -->
       <div class="space-y-4">
         <div class="flex items-center justify-between">
           <div>
             <h2 class="text-xl sm:text-2xl font-display font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-tv text-purple-400"></i> Binge-Worthy Prestige TV
+              <i class="fa-solid fa-tv text-purple-400"></i> Binge-Worthy Television & Modern Classics
             </h2>
-            <p class="text-xs sm:text-sm text-gray-400">Live-action & animated masterpieces with real artwork</p>
+            <p class="text-xs sm:text-sm text-gray-400">Multi-season sagas, cult comedies, limited series, and anime heavyweights</p>
           </div>
           <button onclick="switchTab('shows')" class="text-xs sm:text-sm text-brand-gold hover:underline font-semibold flex items-center gap-1">
             View All TV <i class="fa-solid fa-arrow-right text-xs"></i>
           </button>
         </div>
-        <div id="discoverTvRow" class="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x"></div>
+        <div class="has-arrows">
+          <div id="discoverTvRow" class="hscroll flex gap-4 overflow-x-auto pb-4 pt-1 snap-x"></div>
+        </div>
       </div>
     </section>
 
-    <!-- TAB 1: TOP 250 MOVIES -->
+    <!-- TAB 1: MOVIES -->
     <section id="tab-movies" class="tab-pane hidden fade-in space-y-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6">
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/25 text-brand-gold text-xs font-semibold mb-2">
-            <i class="fa-solid fa-star"></i> IMDb Official Chart
+            <i class="fa-solid fa-star"></i> Curated & Popular Cinema
           </div>
-          <h1 class="text-3xl sm:text-4xl font-display font-bold text-white">Movies Collection</h1>
-          <p class="text-sm text-gray-400 mt-1">Filter by genre, decade, streaming service, or sort order. Click any card for full details & trailers.</p>
+          <h1 class="text-3xl sm:text-4xl font-display font-bold text-white">Feature Films Catalog</h1>
+          <p class="text-sm text-gray-400 mt-1">Explore over 650+ iconic movies. Filter by genre, decade, platform, or sort by rating, year, or title.</p>
         </div>
         <div class="text-xs sm:text-sm text-gray-400 font-medium">
-          Showing <span id="moviesCountBadge" class="text-white font-bold">250</span> movies
+          Showing <span id="moviesCountBadge" class="text-white font-bold">0</span> movies
         </div>
       </div>
 
-      <!-- Advanced Filter Bar -->
-      <div class="glass-card p-4 rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+      <!-- Filter Controls Bar -->
+      <div class="glass-card p-4 rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 border border-white/10">
         <div class="sm:col-span-2 relative">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-          <input type="text" id="searchMovies" placeholder="Search title, year, or genre..." class="w-full pl-10 pr-4 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold transition-colors">
+          <input type="text" id="searchMovies" placeholder="Search film title, year, or keywords..." class="w-full pl-10 pr-4 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold transition-colors">
         </div>
         <select id="filterMoviesGenre" class="px-3.5 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-brand-gold cursor-pointer">
           <option value="All">All Genres</option>
         </select>
-        <select id="filterMoviesPlatform" class="px-3.5 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-brand-gold cursor-pointer">
-          <option value="All">All Platforms</option>
-          <option value="Netflix">Netflix</option>
-          <option value="Max">Max</option>
-          <option value="Prime Video">Prime Video</option>
-          <option value="Disney+">Disney+</option>
-          <option value="Hulu">Hulu</option>
+        <select id="filterMoviesDecade" class="px-3.5 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-brand-gold cursor-pointer">
+          <option value="All">All Decades</option>
+          <option value="2020">2020s</option>
+          <option value="2010">2010s</option>
+          <option value="2000">2000s</option>
+          <option value="1990">1990s</option>
+          <option value="1980">1980s</option>
+          <option value="1970">1970s</option>
+          <option value="1960">1960s</option>
+          <option value="1950">1950s & Older</option>
         </select>
         <select id="sortMovies" class="px-3.5 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-brand-gold cursor-pointer">
-          <option value="rank">Sort: IMDb Rank (#1 first)</option>
+          <option value="rating_desc">Sort: Highest Rated (★)</option>
           <option value="year_desc">Sort: Newest First</option>
           <option value="year_asc">Sort: Oldest Classics First</option>
           <option value="title">Sort: Alphabetical (A–Z)</option>
@@ -292,70 +372,92 @@ button,select,input{transition:all .2s ease}
 
       <!-- Movies Grid -->
       <div id="moviesResults" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-5"></div>
+      <div id="moviesPagination" class="flex justify-center items-center gap-3 pt-6"></div>
     </section>
 
-    <!-- TAB 2: TOP 50 TV SHOWS -->
+    <!-- TAB 2: TV SHOWS -->
     <section id="tab-shows" class="tab-pane hidden fade-in space-y-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6">
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-xs font-semibold mb-2">
-            <i class="fa-solid fa-tv"></i> Verified Television Chart
+            <i class="fa-solid fa-tv"></i> Television Vault
           </div>
-          <h1 class="text-3xl sm:text-4xl font-display font-bold text-white">TV Shows Collection</h1>
-          <p class="text-sm text-gray-400 mt-1">Automatically enhanced with real television posters & synopses via TVMaze.</p>
+          <h1 class="text-3xl sm:text-4xl font-display font-bold text-white">TV Series & Shows</h1>
+          <p class="text-sm text-gray-400 mt-1">Explore over 350+ binge-worthy series, anime, limited dramas, and comedy favorites.</p>
         </div>
         <div class="text-xs sm:text-sm text-gray-400 font-medium">
-          Showing <span id="showsCountBadge" class="text-white font-bold">50</span> series
+          Showing <span id="showsCountBadge" class="text-white font-bold">0</span> series
         </div>
       </div>
 
-      <!-- Filter Bar -->
-      <div class="glass-card p-4 rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <!-- Filter Controls Bar -->
+      <div class="glass-card p-4 rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 border border-white/10">
         <div class="sm:col-span-2 relative">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-          <input type="text" id="searchShows" placeholder="Search TV series..." class="w-full pl-10 pr-4 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold transition-colors">
+          <input type="text" id="searchShows" placeholder="Search TV series title, genre, year..." class="w-full pl-10 pr-4 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold transition-colors">
         </div>
         <select id="filterShowsGenre" class="px-3.5 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-brand-gold cursor-pointer">
           <option value="All">All Genres</option>
         </select>
-        <select id="filterShowsPlatform" class="px-3.5 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-brand-gold cursor-pointer">
-          <option value="All">All Platforms</option>
-          <option value="Netflix">Netflix</option>
-          <option value="Max">Max</option>
-          <option value="Prime Video">Prime Video</option>
-          <option value="Disney+">Disney+</option>
-          <option value="Hulu">Hulu</option>
+        <select id="sortShows" class="px-3.5 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-brand-gold cursor-pointer">
+          <option value="rating_desc">Sort: Highest Rated (★)</option>
+          <option value="year_desc">Sort: Newest First</option>
+          <option value="year_asc">Sort: Oldest First</option>
+          <option value="title">Sort: Alphabetical (A–Z)</option>
         </select>
       </div>
 
-      <!-- TV Grid -->
+      <!-- Shows Grid -->
       <div id="showsResults" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-5"></div>
+      <div id="showsPagination" class="flex justify-center items-center gap-3 pt-6"></div>
     </section>
 
     <!-- TAB 3: CATEGORIES -->
     <section id="tab-categories" class="tab-pane hidden fade-in space-y-8">
       <div class="border-b border-white/10 pb-6">
-        <h1 class="text-3xl sm:text-4xl font-display font-bold text-white">Genre Collections</h1>
-        <p class="text-sm text-gray-400 mt-1">Explore the highest-rated movies and series organized by thematic genre.</p>
-        <!-- Quick Jump Pills -->
+        <h1 class="text-3xl sm:text-4xl font-display font-bold text-white">Curated Genre Collections</h1>
+        <p class="text-sm text-gray-400 mt-1">Browse our complete 1,000+ title archive grouped by cinematic theme.</p>
         <div id="genreQuickPills" class="flex flex-wrap gap-2 mt-4"></div>
       </div>
-      <div id="categoriesList" class="space-y-10"></div>
+      <div id="categoriesList" class="space-y-12"></div>
     </section>
 
     <!-- TAB 4: MY HUB -->
     <section id="tab-hub" class="tab-pane hidden fade-in space-y-10">
+      
+      <!-- Hub Header & Profile Actions -->
       <div class="border-b border-white/10 pb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 class="text-3xl sm:text-4xl font-display font-bold text-white flex items-center gap-3">
-            <span>Personal Cinema Hub</span>
+            <span>Your Personal Cinema Hub</span>
           </h1>
-          <p class="text-sm text-gray-400 mt-1">Manage your Watchlist, track watched titles, get smart multi-factor recommendations, and test taste compatibility.</p>
+          <p class="text-sm text-gray-400 mt-1">Track watchlists, mark watched titles, analyze your cinema DNA, and generate customized algorithmic recommendations.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="exportUserData()" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-gray-200 flex items-center gap-2 transition-all">
+            <i class="fa-solid fa-download text-brand-gold"></i> Export Backup
+          </button>
+          <label class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-gray-200 flex items-center gap-2 cursor-pointer transition-all">
+            <i class="fa-solid fa-upload text-cyan-400"></i> Import Backup
+            <input type="file" accept=".json" class="hidden" onchange="importUserData(event)">
+          </label>
         </div>
       </div>
 
-      <!-- 1. WATCHLIST & WATCHED TABS -->
-      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+      <!-- 1. TASTE DNA & ANALYTICS CARD -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-white/10">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-brand-gold">Viewer DNA Analytics</span>
+            <h2 class="text-2xl font-display font-bold text-white mt-0.5">Your Cinema Taste Profile</h2>
+          </div>
+          <span class="text-xs text-gray-400">Updates live as you mark watched and rated titles</span>
+        </div>
+        <div id="hubStats"></div>
+      </div>
+
+      <!-- 2. WATCHLIST & WATCHED LISTS -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-white/10">
         <div class="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
           <div class="flex items-center gap-3">
             <button onclick="switchHubList('wishlist')" id="hubBtnWishlist" class="px-4 py-2 rounded-xl text-sm font-bold bg-rose-500 text-white transition-all flex items-center gap-2">
@@ -366,64 +468,66 @@ button,select,input{transition:all .2s ease}
             </button>
           </div>
           <button onclick="clearCurrentHubList()" class="text-xs text-gray-400 hover:text-rose-400 transition-colors">
-            <i class="fa-solid fa-trash-can mr-1"></i> Clear List
+            <i class="fa-solid fa-trash-can mr-1"></i> Clear Current Tab
           </button>
         </div>
-        <div id="wishlistContainer" class="flex gap-4 overflow-x-auto pb-3 pt-1 min-h-[220px] items-center"></div>
+        <div class="has-arrows">
+          <div id="wishlistContainer" class="hscroll flex gap-4 overflow-x-auto pb-4 pt-1 min-h-[220px] items-center snap-x"></div>
+        </div>
       </div>
 
-      <!-- 2. SMART RECOMMENDATION ENGINE -->
-      <div id="recSection" class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-brand-gold/20">
+      <!-- 3. SMART MULTI-FACTOR RECOMMENDATION ENGINE -->
+      <div id="recSection" class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-brand-gold/30">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <span class="text-[11px] font-bold uppercase tracking-widest text-brand-gold">Algorithmic Matchmaker</span>
             <h2 class="text-2xl font-display font-bold text-white mt-0.5">What Should You Watch Tonight?</h2>
-            <p class="text-sm text-gray-400">Pick up to 5 titles you love. Our engine scores all 300 entries by genre affinity, era proximity, platform & rating.</p>
+            <p class="text-sm text-gray-400">Pick up to 5 titles you love. Our engine scores 1,000+ entries across genre affinity, era proximity, and critical acclaim.</p>
           </div>
           <button onclick="prefillFromWishlist('recTags')" class="self-start sm:self-center px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-brand-gold transition-all">
-            <i class="fa-solid fa-bolt mr-1"></i> Use My Watchlist
+            <i class="fa-solid fa-bolt mr-1"></i> Auto-Fill from Watchlist
           </button>
         </div>
 
-        <!-- Selected Chips -->
+        <!-- Selected Seed Chips -->
         <div id="recTags" class="flex flex-wrap gap-2 min-h-[48px] p-3 rounded-2xl bg-black/40 border border-white/10 items-center"></div>
 
-        <!-- Search Input with Autocomplete -->
+        <!-- Autocomplete Input -->
         <div class="flex flex-col sm:flex-row gap-3">
           <div class="relative flex-1 autocomplete-wrapper">
             <i class="fa-solid fa-plus-circle absolute left-4 top-1/2 -translate-y-1/2 text-brand-gold"></i>
-            <input type="text" id="recInput" placeholder="Type a movie or TV show you enjoyed (e.g. Inception, Breaking Bad)..."
+            <input type="text" id="recInput" placeholder="Type a title you enjoyed (e.g. Inception, Breaking Bad, The Dark Knight)..."
               oninput="handleAutocomplete(event, 'recInput', 'recTags', 'recSuggest', 5)"
               onfocus="handleAutocomplete(event, 'recInput', 'recTags', 'recSuggest', 5)"
               class="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-black/60 border border-white/15 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold">
-            <div id="recSuggest" class="suggestions-box hidden absolute left-0 right-0 top-full mt-2 bg-[#141926] border border-white/15 rounded-2xl shadow-2xl max-h-64 overflow-y-auto z-30 divide-y divide-white/5"></div>
+            <div id="recSuggest" class="suggestions-box hidden absolute left-0 right-0 top-full mt-2 bg-[#121622] border border-white/15 rounded-2xl shadow-2xl max-h-64 overflow-y-auto z-30 divide-y divide-white/5"></div>
           </div>
-          <button onclick="generateRecommendation()" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-brand-gold to-amber-500 hover:from-amber-400 hover:to-brand-gold text-black font-bold text-sm shadow-lg shadow-brand-gold/20 transition-all active:scale-95 whitespace-nowrap">
-            <i class="fa-solid fa-wand-magic-sparkles mr-1.5"></i> Generate Top Matches
+          <button onclick="generateRecommendation()" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-brand-gold to-amber-500 hover:from-amber-400 hover:to-brand-gold text-black font-extrabold text-sm shadow-lg shadow-brand-gold/20 transition-all active:scale-95 whitespace-nowrap">
+            <i class="fa-solid fa-wand-magic-sparkles mr-1.5"></i> Find My Matches
           </button>
         </div>
 
-        <!-- Recommendation Results Output -->
+        <!-- Recommendation Output Results -->
         <div id="recResultBox" class="hidden pt-4 border-t border-white/10 space-y-4">
           <div class="flex items-center justify-between">
             <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-              <i class="fa-solid fa-sparkles"></i> Personalized Top 3 Recommendations For You
+              <i class="fa-solid fa-sparkles"></i> Personalized Top Matches For You
             </h3>
             <button id="rejectBtn" onclick="rejectRecommendation()" class="text-xs font-semibold px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10 transition-all">
-              <i class="fa-solid fa-rotate mr-1"></i> Cycle Next Matches (<span id="rejectCount">3</span> left)
+              <i class="fa-solid fa-rotate mr-1"></i> Cycle Next Picks (<span id="rejectCount">3</span> left)
             </button>
           </div>
           <div id="recCardsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
         </div>
       </div>
 
-      <!-- 3. DEEP TASTE COMPATIBILITY ANALYZER -->
-      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+      <!-- 4. SOCIAL COMPATIBILITY LAB -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-white/10">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <span class="text-[11px] font-bold uppercase tracking-widest text-purple-400">Social Cinema Lab</span>
             <h2 class="text-2xl font-display font-bold text-white mt-0.5">Deep Taste Compatibility Test</h2>
-            <p class="text-sm text-gray-400">Compare your favorites against a friend's (min 3 titles each) for a multi-dimensional breakdown & a joint movie night pick.</p>
+            <p class="text-sm text-gray-400">Compare your favorite picks against a friend's (min 3 titles each) for a multidimensional breakdown and a joint movie-night pick.</p>
           </div>
           <button onclick="loadDemoCompatibility()" class="self-start sm:self-center px-3.5 py-2 rounded-xl bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/30 text-xs font-semibold text-purple-300 transition-all">
             <i class="fa-solid fa-flask mr-1"></i> Load Demo Profiles
@@ -431,11 +535,11 @@ button,select,input{transition:all .2s ease}
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- User Column -->
-          <div class="p-5 rounded-2xl bg-black/30 border border-white/10 space-y-3">
+          <!-- User 1 Column -->
+          <div class="p-5 rounded-2xl bg-black/35 border border-white/10 space-y-3">
             <div class="flex items-center justify-between">
               <label class="text-xs font-extrabold uppercase tracking-wider text-brand-gold flex items-center gap-2">
-                <i class="fa-solid fa-user-astronaut"></i> Your Top Titles (3–10)
+                <i class="fa-solid fa-user-astronaut"></i> Your Favorites (3–10)
               </label>
               <button onclick="prefillFromWishlist('myTags')" class="text-[11px] text-gray-400 hover:text-brand-gold">Import Watchlist</button>
             </div>
@@ -445,15 +549,15 @@ button,select,input{transition:all .2s ease}
                 oninput="handleAutocomplete(event, 'myInput', 'myTags', 'mySuggest', 10)"
                 onfocus="handleAutocomplete(event, 'myInput', 'myTags', 'mySuggest', 10)"
                 class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/15 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold">
-              <div id="mySuggest" class="suggestions-box hidden absolute left-0 right-0 top-full mt-1 bg-[#141926] border border-white/15 rounded-xl shadow-2xl max-h-56 overflow-y-auto z-30 divide-y divide-white/5"></div>
+              <div id="mySuggest" class="suggestions-box hidden absolute left-0 right-0 top-full mt-1 bg-[#121622] border border-white/15 rounded-xl shadow-2xl max-h-56 overflow-y-auto z-30 divide-y divide-white/5"></div>
             </div>
           </div>
 
-          <!-- Friend Column -->
-          <div class="p-5 rounded-2xl bg-black/30 border border-white/10 space-y-3">
+          <!-- User 2 Column -->
+          <div class="p-5 rounded-2xl bg-black/35 border border-white/10 space-y-3">
             <div class="flex items-center justify-between">
               <label class="text-xs font-extrabold uppercase tracking-wider text-cyan-400 flex items-center gap-2">
-                <i class="fa-solid fa-user-group"></i> Friend's Top Titles (3–10)
+                <i class="fa-solid fa-user-group"></i> Friend's Favorites (3–10)
               </label>
               <button onclick="surpriseFriendList()" class="text-[11px] text-gray-400 hover:text-cyan-400">Randomize Friend</button>
             </div>
@@ -463,16 +567,16 @@ button,select,input{transition:all .2s ease}
                 oninput="handleAutocomplete(event, 'friendInput', 'friendTags', 'friendSuggest', 10)"
                 onfocus="handleAutocomplete(event, 'friendInput', 'friendTags', 'friendSuggest', 10)"
                 class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/15 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400">
-              <div id="friendSuggest" class="suggestions-box hidden absolute left-0 right-0 top-full mt-1 bg-[#141926] border border-white/15 rounded-xl shadow-2xl max-h-56 overflow-y-auto z-30 divide-y divide-white/5"></div>
+              <div id="friendSuggest" class="suggestions-box hidden absolute left-0 right-0 top-full mt-1 bg-[#121622] border border-white/15 rounded-xl shadow-2xl max-h-56 overflow-y-auto z-30 divide-y divide-white/5"></div>
             </div>
           </div>
         </div>
 
-        <button onclick="calculateCompatibility()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-purple-600/25 transition-all active:scale-[0.99]">
+        <button onclick="calculateCompatibility()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 hover:opacity-95 text-white font-extrabold text-sm shadow-lg shadow-purple-600/25 transition-all active:scale-[0.99]">
           <i class="fa-solid fa-chart-pie mr-2"></i> Run Deep Compatibility Analysis
         </button>
 
-        <!-- Compatibility Result Panel -->
+        <!-- Compatibility Results Panel -->
         <div id="compatScoreBox" class="hidden pt-6 border-t border-white/10 space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             <div class="flex flex-col items-center justify-center p-6 rounded-2xl bg-black/40 border border-white/10 text-center">
@@ -484,8 +588,8 @@ button,select,input{transition:all .2s ease}
               <ul id="compatBreakdown" class="space-y-3"></ul>
             </div>
           </div>
-          <!-- Joint Movie Night Pick -->
-          <div id="jointMoviePick" class="p-5 rounded-2xl bg-gradient-to-r from-brand-gold/10 via-purple-500/10 to-cyan-500/10 border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4"></div>
+          <!-- Joint Watch Night Pick -->
+          <div id="jointMoviePick" class="p-5 rounded-2xl bg-gradient-to-r from-brand-gold/15 via-purple-500/10 to-cyan-500/15 border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4"></div>
         </div>
       </div>
     </section>
@@ -502,40 +606,61 @@ button,select,input{transition:all .2s ease}
     </div>
   </div>
 
-  <!-- MODAL 2: POSTER ARTWORK SETTINGS -->
-  <div id="apiModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-    <div class="glass-card w-full max-w-lg rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl space-y-5 relative">
-      <button onclick="closeApiModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 flex items-center justify-center">
+  <!-- MODAL 2: REVAMPED SURPRISE ME ROULETTE STUDIO -->
+  <div id="surpriseModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="glass-card w-full max-w-lg rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl space-y-6 relative animate-fadeIn">
+      <button onclick="closeSurpriseModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 flex items-center justify-center">
         <i class="fa-solid fa-xmark"></i>
       </button>
+
       <div class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-2xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl">
-          <i class="fa-solid fa-images"></i>
+        <div class="w-12 h-12 rounded-2xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl">
+          <i class="fa-solid fa-dice"></i>
         </div>
         <div>
-          <h3 class="text-xl font-display font-bold text-white">Poster Artwork Engine</h3>
-          <p class="text-xs text-gray-400">How CineSphere renders high-definition thumbnails</p>
+          <h3 class="text-2xl font-display font-extrabold text-white">Cinema Roulette</h3>
+          <p class="text-xs text-gray-400">Let fate pick your next cinematic experience</p>
         </div>
       </div>
 
-      <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 text-xs text-emerald-200 space-y-1.5 leading-relaxed">
-        <div class="font-bold text-emerald-400 flex items-center gap-1.5">
-          <i class="fa-solid fa-circle-check"></i> Zero-Config Artwork Active by Default!
-        </div>
-        <p>1. <strong>TV Shows & Iconic Films:</strong> Automatically fetches real posters via the public <strong>TVMaze & Wikipedia/Wikimedia APIs</strong> (no key required).</p>
-        <p>2. <strong>Procedural Vector Art:</strong> Every title also has a custom genre-styled SVG cinema poster fallback so you <em>never</em> see broken thumbnails.</p>
-      </div>
-
+      <!-- Quick Roulette Filters -->
       <div class="space-y-2">
-        <label class="text-xs font-bold uppercase tracking-wider text-gray-300">Optional: Custom TMDB API Key (v3)</label>
-        <input type="text" id="tmdbKeyInput" placeholder="Paste optional TMDB API key for 100% theatrical posters..." class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/15 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold">
-        <p class="text-[11px] text-gray-400">Have a free key from <a href="https://www.themoviedb.org/settings/api" target="_blank" class="text-brand-gold underline">themoviedb.org</a>? Add it here to override with official theatrical posters.</p>
+        <label class="text-[11px] font-extrabold uppercase tracking-wider text-gray-400">Filter By Vibe (Optional)</label>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+          <button data-sfilter="all" onclick="setSurpriseFilter('all')" class="sfilter-btn px-3 py-2 rounded-xl bg-brand-gold text-black font-bold">🎲 Anything Goes</button>
+          <button data-sfilter="movies" onclick="setSurpriseFilter('movies')" class="sfilter-btn px-3 py-2 rounded-xl bg-white/5 text-gray-300 hover:text-white font-medium">🎬 Feature Films</button>
+          <button data-sfilter="shows" onclick="setSurpriseFilter('shows')" class="sfilter-btn px-3 py-2 rounded-xl bg-white/5 text-gray-300 hover:text-white font-medium">📺 TV Series</button>
+          <button data-sfilter="pantheon" onclick="setSurpriseFilter('pantheon')" class="sfilter-btn px-3 py-2 rounded-xl bg-white/5 text-gray-300 hover:text-white font-medium">👑 8.5+ Pantheon</button>
+          <button data-sfilter="blockbuster" onclick="setSurpriseFilter('blockbuster')" class="sfilter-btn px-3 py-2 rounded-xl bg-white/5 text-gray-300 hover:text-white font-medium">🍿 Crowd Pleaser</button>
+          <button data-sfilter="hidden" onclick="setSurpriseFilter('hidden')" class="sfilter-btn px-3 py-2 rounded-xl bg-white/5 text-gray-300 hover:text-white font-medium">💎 Hidden Gem</button>
+        </div>
       </div>
 
-      <div class="flex items-center justify-end gap-3 pt-2">
-        <button onclick="closeApiModal()" class="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-semibold text-gray-300">Close</button>
-        <button onclick="saveApiKey()" class="px-5 py-2.5 rounded-xl bg-brand-gold hover:bg-amber-400 text-black text-xs font-bold shadow-lg shadow-brand-gold/20">Save & Refresh Posters</button>
+      <!-- Spinning Reel Display -->
+      <div id="rouletteDisplay" class="p-4 rounded-2xl bg-black/60 border border-white/10 min-h-[170px] flex items-center gap-4 transition-all">
+        <!-- Injected dynamically -->
       </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <button id="spinBtn" onclick="spinSurpriseWheel()" class="flex-1 py-3.5 rounded-2xl bg-gradient-to-r from-brand-gold via-amber-500 to-amber-600 hover:opacity-95 text-black font-extrabold text-sm shadow-lg shadow-brand-gold/25 transition-all active:scale-95 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-rotate text-base"></i> <span>Roll Roulette</span>
+        </button>
+        <button id="inspectSurpriseBtn" onclick="inspectCurrentSurprise()" class="px-4 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-bold text-sm border border-white/15 transition-all">
+          Inspect Title
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="palette" class="fixed inset-0 z-[60] hidden items-start justify-center p-4 pt-20 sm:pt-28 bg-black/75 backdrop-blur-md" onclick="if(event.target.id==='palette')closePalette()">
+    <div class="glass-card w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl animate-fadeIn border border-white/20">
+      <div class="flex items-center gap-3 px-4 border-b border-white/10">
+        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+        <input id="palInput" oninput="palSearch(this.value)" placeholder="Search any of 1,000+ movies or TV series..." class="flex-1 bg-transparent py-4 text-sm text-white placeholder-gray-500 focus:outline-none">
+        <kbd class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-gray-400">ESC</kbd>
+      </div>
+      <div id="palList" class="max-h-80 overflow-y-auto divide-y divide-white/5"></div>
     </div>
   </div>
 
@@ -548,17 +673,17 @@ button,select,input{transition:all .2s ease}
       <div class="flex items-center gap-2">
         <span class="font-display font-bold text-gray-300">CineSphere Pro</span>
         <span>·</span>
-        <span>IMDb Top 250 Movies & Top 50 TV Discovery Suite</span>
+        <span>The 1,000+ Film & TV Discovery Vault</span>
       </div>
-      <div>Built with Hybrid Live Artwork + Procedural SVG Posters</div>
+      <div>Zero-Key Hybrid iTunes & TVMaze Live Artwork Engine</div>
     </div>
   </footer>
 
   <script>
     // ==========================================
-    // 1. COMPLETE VERIFIED IMDb DATASET
+    // 1. EXPANDED ~1,000 TITLES DATABASE
     // ==========================================
-    const rawMovies = [
+    const rawMoviesCore = [
       ["The Shawshank Redemption","Drama",9.3,1994],["The Godfather","Crime",9.2,1972],["The Dark Knight","Action",9.0,2008],["The Godfather: Part II","Crime",9.0,1974],["12 Angry Men","Drama",9.0,1957],["Schindler's List","Drama",9.0,1993],["The Lord of the Rings: The Return of the King","Fantasy",9.0,2003],["Pulp Fiction","Crime",8.9,1994],["The Lord of the Rings: The Fellowship of the Ring","Fantasy",8.9,2001],["The Good, the Bad and the Ugly","Western",8.8,1966],["Forrest Gump","Drama",8.8,1994],["Fight Club","Drama",8.8,1999],["The Lord of the Rings: The Two Towers","Fantasy",8.8,2002],["Inception","Sci-Fi",8.8,2010],["Star Wars: Episode V - The Empire Strikes Back","Sci-Fi",8.7,1980],["The Matrix","Sci-Fi",8.7,1999],["Goodfellas","Crime",8.7,1990],["One Flew Over the Cuckoo's Nest","Drama",8.7,1975],["Se7en","Thriller",8.6,1995],["It's a Wonderful Life","Drama",8.6,1946],["Seven Samurai","Action",8.6,1954],["Interstellar","Sci-Fi",8.7,2014],["The Silence of the Lambs","Thriller",8.6,1991],["Saving Private Ryan","Action",8.6,1998],["City of God","Crime",8.6,2002],["Life Is Beautiful","Comedy",8.6,1997],["The Green Mile","Drama",8.6,1999],["Star Wars: Episode IV - A New Hope","Sci-Fi",8.6,1977],["Terminator 2: Judgment Day","Sci-Fi",8.6,1991],["Back to the Future","Sci-Fi",8.5,1985],["Spirited Away","Animation",8.6,2001],["The Pianist","Drama",8.5,2002],["Psycho","Horror",8.5,1960],["Parasite","Thriller",8.5,2019],["Leon: The Professional","Action",8.5,1994],["The Lion King","Animation",8.5,1994],["Gladiator","Action",8.5,2000],["American History X","Drama",8.5,1998],["The Departed","Crime",8.5,2006],["Whiplash","Drama",8.5,2014],["The Prestige","Thriller",8.5,2006],["Casablanca","Romance",8.5,1942],["Grave of the Fireflies","Animation",8.5,1988],["Cinema Paradiso","Drama",8.5,1988],["The Usual Suspects","Thriller",8.5,1995],["Once Upon a Time in the West","Western",8.5,1968],["Rear Window","Thriller",8.5,1954],["Alien","Horror",8.5,1979],["City Lights","Comedy",8.5,1931],["Apocalypse Now","Drama",8.4,1979],
       ["Memento","Thriller",8.4,2000],["Django Unchained","Western",8.5,2012],["Raiders of the Lost Ark","Action",8.4,1981],["WALL-E","Animation",8.4,2008],["The Lives of Others","Drama",8.4,2006],["Sunset Boulevard","Drama",8.4,1950],["Paths of Glory","Drama",8.4,1957],["The Shining","Horror",8.4,1980],["The Great Dictator","Comedy",8.4,1940],["Witness for the Prosecution","Drama",8.4,1957],["Aliens","Action",8.4,1986],["American Beauty","Drama",8.3,1999],["The Dark Knight Rises","Action",8.4,2012],["Dr. Strangelove","Comedy",8.4,1964],["Spider-Man: Into the Spider-Verse","Animation",8.4,2018],["Oldboy","Thriller",8.3,2003],["Coco","Animation",8.4,2017],["Amadeus","Drama",8.4,1984],["Inglourious Basterds","War",8.4,2009],["The Boat","War",8.4,1981],["Braveheart","Action",8.3,1995],["Avengers: Endgame","Action",8.4,2019],["Joker","Drama",8.4,2019],["Princess Mononoke","Animation",8.3,1997],["Good Will Hunting","Drama",8.3,1997],["Once Upon a Time in America","Crime",8.3,1984],["Toy Story","Animation",8.3,1995],["Your Name.","Animation",8.4,2016],["3 Idiots","Comedy",8.4,2009],["Singin' in the Rain","Romance",8.3,1952],["Requiem for a Dream","Drama",8.3,2000],["High and Low","Crime",8.4,1963],["Toy Story 3","Animation",8.3,2010],["Capernaum","Drama",8.4,2018],["Star Wars: Episode VI - Return of the Jedi","Sci-Fi",8.3,1983],["Eternal Sunshine of the Spotless Mind","Romance",8.3,2004],["2001: A Space Odyssey","Sci-Fi",8.3,1968],["Reservoir Dogs","Crime",8.3,1992],["Come and See","War",8.4,1985],["The Hunt","Drama",8.3,2012],["Citizen Kane","Drama",8.3,1941],["M","Crime",8.3,1931],["Lawrence of Arabia","Drama",8.3,1962],["North by Northwest","Thriller",8.3,1959],["Vertigo","Thriller",8.3,1958],["Amelie","Romance",8.3,2001],["A Clockwork Orange","Sci-Fi",8.3,1971],["Double Indemnity","Thriller",8.3,1944],["Full Metal Jacket","War",8.3,1987],["Scarface","Crime",8.3,1983],
       ["Hamilton","Drama",8.3,2020],["Incendies","Drama",8.3,2010],["Heat","Crime",8.3,1995],["Up","Animation",8.3,2009],["To Kill a Mockingbird","Drama",8.3,1962],["The Sting","Crime",8.3,1973],["A Separation","Drama",8.3,2011],["Metropolis","Sci-Fi",8.3,1927],["La La Land","Romance",8.0,2016],["The Intouchables","Comedy",8.5,2011],["Modern Times","Comedy",8.5,1936],["Like Stars on Earth","Drama",8.3,2007],["My Father and My Son","Drama",8.2,2005],["Bicycle Thieves","Drama",8.3,1948],["Hacksaw Ridge","War",8.1,2016],["Dangal","Drama",8.3,2016],["Snatch","Crime",8.2,2000],["The Kid","Comedy",8.2,1921],["Monty Python and the Holy Grail","Comedy",8.2,1975],["L.A. Confidential","Crime",8.2,1997],["For a Few Dollars More","Western",8.2,1965],["Rashomon","Drama",8.2,1950],["The Apartment","Romance",8.3,1960],["Indiana Jones and the Last Crusade","Action",8.2,1989],["Yojimbo","Action",8.2,1961],["All About Eve","Drama",8.2,1950],["Batman Begins","Action",8.2,2005],["Some Like It Hot","Comedy",8.2,1959],["The Treasure of the Sierra Madre","Drama",8.2,1948],["Unforgiven","Western",8.2,1992],["Downfall","War",8.2,2004],["Raging Bull","Drama",8.1,1980],["The Third Man","Thriller",8.1,1949],["Die Hard","Action",8.2,1988],["Children of Heaven","Drama",8.2,1997],["The Great Escape","War",8.2,1963],["Chinatown","Thriller",8.1,1974],["Inside Out","Animation",8.1,2015],["Pan's Labyrinth","Fantasy",8.2,2006],["Ikiru","Drama",8.3,1952],["My Neighbor Totoro","Animation",8.1,1988],["On the Waterfront","Drama",8.1,1954],["Room","Drama",8.1,2015],["Ran","War",8.2,1985],["The Gold Rush","Comedy",8.1,1925],["Arrival","Sci-Fi",7.9,2016],["The Secret in Their Eyes","Thriller",8.2,2009],["The Bridge on the River Kwai","War",8.1,1957],["Blade Runner","Sci-Fi",8.1,1982],["Mr. Smith Goes to Washington","Drama",8.1,1939],
@@ -566,12 +691,81 @@ button,select,input{transition:all .2s ease}
       ["Stand by Me","Drama",8.1,1986],["Spotlight","Drama",8.1,2015],["In the Name of the Father","Drama",8.1,1993],["Wild Tales","Comedy",8.1,2014],["The Nights of Cabiria","Drama",8.1,1957],["Butch Cassidy and the Sundance Kid","Western",8.0,1969],["The 400 Blows","Drama",8.1,1959],["Mad Max: Fury Road","Action",8.1,2015],["The Maltese Falcon","Thriller",8.0,1941],["12 Years a Slave","Drama",8.1,2013],["Ben-Hur","Drama",8.1,1959],["The Grand Budapest Hotel","Comedy",8.1,2014],["Persona","Drama",8.1,1966],["Million Dollar Baby","Drama",8.1,2004],["Amores Perros","Drama",8.1,2000],["Jurassic Park","Sci-Fi",8.2,1993],["The Princess Bride","Fantasy",8.0,1987],["Drishyam","Thriller",8.2,2015],["Hachi: A Dog's Tale","Drama",8.1,2009],["Memories of Murder","Crime",8.1,2003],["Stalker","Sci-Fi",8.1,1979],["Nausicaa of the Valley of the Wind","Animation",8.0,1984],["The Truman Show","Comedy",8.2,1998],["The Grapes of Wrath","Drama",8.1,1940],["Before Sunrise","Romance",8.1,1995],["Touch of Evil","Thriller",8.0,1958],["The Message","Drama",8.1,1976],["Annie Hall","Romance",8.0,1977],["Rocky","Drama",8.1,1976],["Gandhi","Drama",8.0,1982],["Harry Potter and the Deathly Hallows: Part 2","Fantasy",8.1,2011],["Diabolique","Thriller",8.1,1955],["The Bourne Ultimatum","Action",8.0,2007],["Donnie Darko","Sci-Fi",8.0,2001],["Monsters, Inc.","Animation",8.1,2001],["Prisoners","Thriller",8.1,2013],["8 1/2","Drama",8.0,1963],["The Terminator","Sci-Fi",8.1,1984],["The Wizard of Oz","Fantasy",8.1,1939],["Groundhog Day","Comedy",8.0,1993],["Catch Me If You Can","Crime",8.1,2002],["Zootopia","Animation",8.0,2016],["Twelve Monkeys","Sci-Fi",8.0,1995],["La Haine","Drama",8.1,1995],["Jaws","Thriller",8.1,1975],["Barry Lyndon","Drama",8.1,1975],["Udaan","Drama",8.1,2010],["The Best Years of Our Lives","Drama",8.1,1946],["Infernal Affairs","Crime",8.0,2002],["Pirates of the Caribbean: The Curse of the Black Pearl","Fantasy",8.1,2003]
     ];
 
-    const rawShows = [
+    // Expanded Popular Blockbusters, Cult Classics, and Worldwide Hits
+    const rawMoviesExpanded = [
+      // Modern Phenomenons & 2020s Blockbusters
+      ["Oppenheimer","Drama",8.9,2023],["Dune: Part Two","Sci-Fi",8.6,2024],["Dune","Sci-Fi",8.0,2021],["Spider-Man: Across the Spider-Verse","Animation",8.6,2023],["Top Gun: Maverick","Action",8.3,2022],["Everything Everywhere All at Once","Sci-Fi",7.8,2022],["The Batman","Action",7.8,2022],["Barbie","Comedy",6.8,2023],["Avatar: The Way of Water","Sci-Fi",7.6,2022],["Avatar","Sci-Fi",7.9,2009],["Deadpool & Wolverine","Action",7.7,2024],["Inside Out 2","Animation",7.6,2024],["Poor Things","Comedy",7.8,2023],["The Holdovers","Comedy",7.9,2023],["Anatomy of a Fall","Thriller",7.7,2023],["The Zone of Interest","War",7.4,2023],["Past Lives","Romance",7.9,2023],["Killers of the Flower Moon","Crime",7.6,2023],["12th Fail","Drama",8.9,2023],["RRR","Action",7.8,2022],["Kantara","Action",8.2,2022],["Baahubali 2: The Conclusion","Action",8.2,2017],["Baahubali: The Beginning","Action",8.0,2015],["K.G.F: Chapter 2","Action",8.2,2022],["Jai Bhim","Drama",8.8,2021],["Spider-Man: No Way Home","Action",8.2,2021],["The Brutalist","Drama",7.5,2024],
+
+      // Pop-Culture Franchises: MCU & DC
+      ["Avengers: Infinity War","Action",8.4,2018],["The Avengers","Action",8.0,2012],["Iron Man","Action",7.9,2008],["Captain America: The Winter Soldier","Action",7.8,2014],["Captain America: Civil War","Action",7.8,2016],["Guardians of the Galaxy","Sci-Fi",8.0,2014],["Guardians of the Galaxy Vol. 3","Sci-Fi",7.9,2023],["Thor: Ragnarok","Comedy",7.9,2017],["Black Panther","Action",7.3,2018],["Doctor Strange","Fantasy",7.5,2016],["Spider-Man: Homecoming","Action",7.4,2017],["Logan","Action",8.1,2017],["Deadpool","Action",8.0,2016],["X-Men: Days of Future Past","Action",7.9,2014],["Man of Steel","Action",7.1,2013],["Zack Snyder's Justice League","Action",7.9,2021],["Wonder Woman","Action",7.4,2017],["The Suicide Squad","Action",7.2,2021],["Watchmen","Action",7.6,2009],["Spider-Man 2","Action",7.4,2004],["Spider-Man","Action",7.4,2002],
+
+      // Harry Potter & Fantasy Franchises
+      ["Harry Potter and the Sorcerer's Stone","Fantasy",7.6,2001],["Harry Potter and the Chamber of Secrets","Fantasy",7.4,2002],["Harry Potter and the Prisoner of Azkaban","Fantasy",7.9,2004],["Harry Potter and the Goblet of Fire","Fantasy",7.7,2005],["Harry Potter and the Order of the Phoenix","Fantasy",7.5,2007],["Harry Potter and the Half-Blood Prince","Fantasy",7.6,2009],["Harry Potter and the Deathly Hallows: Part 1","Fantasy",7.7,2010],["The Hobbit: An Unexpected Journey","Fantasy",7.8,2012],["The Chronicles of Narnia: The Lion, the Witch and the Wardrobe","Fantasy",6.9,2005],
+
+      // Pop-Culture Franchises: Fast, Transformers, Pirates, Mission Impossible
+      ["Fast & Furious 6","Action",7.0,2013],["Furious 7","Action",7.1,2015],["The Fast and the Furious","Action",6.8,2001],["Fast Five","Action",7.3,2011],["Transformers","Action",7.0,2007],["Transformers: Dark of the Moon","Action",6.2,2011],["Pirates of the Caribbean: Dead Man's Chest","Fantasy",7.3,2006],["Pirates of the Caribbean: At World's End","Fantasy",7.1,2007],["Mission: Impossible - Fallout","Action",7.7,2018],["Mission: Impossible - Dead Reckoning","Action",7.7,2023],["Mission: Impossible - Rogue Nation","Action",7.4,2015],["Mission: Impossible - Ghost Protocol","Action",7.4,2011],["Mission: Impossible","Action",7.2,1996],["Casino Royale","Action",8.0,2006],["Skyfall","Action",7.8,2012],["No Time to Die","Action",7.3,2021],["John Wick","Action",7.4,2014],["John Wick: Chapter 4","Action",7.7,2023],["John Wick: Chapter 2","Action",7.4,2017],["John Wick: Chapter 3 - Parabellum","Action",7.4,2019],
+
+      // Twilight & Young Adult Hits (Popular, regardless of rating)
+      ["Twilight","Romance",5.3,2008],["The Twilight Saga: New Moon","Romance",4.8,2009],["The Twilight Saga: Eclipse","Romance",5.1,2010],["The Hunger Games","Action",7.2,2012],["The Hunger Games: Catching Fire","Action",7.5,2013],["The Maze Runner","Sci-Fi",6.8,2014],["Divergent","Sci-Fi",6.6,2014],["The Fault in Our Stars","Romance",7.7,2014],["Fifty Shades of Grey","Romance",4.2,2015],
+
+      // Sci-Fi, Space & Cyberpunk
+      ["Blade Runner 2049","Sci-Fi",8.0,2017],["The Martian","Sci-Fi",8.0,2015],["Gravity","Sci-Fi",7.7,2013],["Ex Machina","Sci-Fi",7.7,2014],["Edge of Tomorrow","Sci-Fi",7.9,2014],["District 9","Sci-Fi",7.9,2009],["Children of Men","Sci-Fi",7.9,2006],["Minority Report","Sci-Fi",7.6,2002],["Tenet","Sci-Fi",7.3,2020],["E.T. the Extra-Terrestrial","Sci-Fi",7.9,1982],["Close Encounters of the Third Kind","Sci-Fi",7.6,1977],["The Fifth Element","Sci-Fi",7.6,1997],["Gattaca","Sci-Fi",7.7,1997],["Looper","Sci-Fi",7.4,2012],["Source Code","Sci-Fi",7.5,2011],["Oblivion","Sci-Fi",7.0,2013],["Dune (1984)","Sci-Fi",6.3,1984],["Starship Troopers","Sci-Fi",7.3,1997],["Alita: Battle Angel","Sci-Fi",7.3,2019],["Tron: Legacy","Sci-Fi",6.8,2010],
+
+      // Horror, Slashers & Supernatural Thrillers
+      ["Get Out","Horror",7.7,2017],["Hereditary","Horror",7.3,2018],["Midsommar","Horror",7.1,2019],["The Conjuring","Horror",7.5,2013],["The Conjuring 2","Horror",7.3,2016],["A Quiet Place","Horror",7.5,2018],["A Quiet Place Part II","Horror",7.2,2020],["The Exorcist","Horror",8.1,1973],["Halloween","Horror",7.7,1978],["A Nightmare on Elm Street","Horror",7.4,1984],["Friday the 13th","Horror",6.4,1980],["Scream","Horror",7.4,1996],["Scream (2022)","Horror",6.3,2022],["Saw","Horror",7.6,2004],["Saw X","Horror",6.6,2023],["Insidious","Horror",6.8,2010],["Sinister","Horror",6.8,2012],["It","Horror",7.3,2017],["It Chapter Two","Horror",6.5,2019],["The Ring","Horror",7.1,2002],["The Blair Witch Project","Horror",6.5,1999],["Paranormal Activity","Horror",6.3,2007],["Train to Busan","Horror",7.6,2016],["The Cabin in the Woods","Horror",7.0,2011],["Talk to Me","Horror",7.1,2022],["Barbarian","Horror",7.0,2022],["The Babadook","Horror",6.8,2014],["28 Days Later","Horror",7.5,2002],
+
+      // Crime, Neo-Noir, Mystery & Dark Comedies
+      ["Knives Out","Thriller",7.9,2019],["Glass Onion: A Knives Out Mystery","Comedy",7.1,2022],["Zodiac","Crime",7.7,2007],["Nightcrawler","Thriller",7.7,2014],["Sicario","Crime",7.6,2015],["Black Swan","Thriller",8.0,2010],["Mulholland Drive","Thriller",7.9,2001],["The Handmaiden","Thriller",8.1,2016],["Andhadhun","Thriller",8.2,2018],["Gangs of Wasseypur","Crime",8.2,2012],["Taxi Driver","Crime",8.2,1976],["The Irish Man","Crime",7.8,2019],["Drive","Crime",7.8,2011],["Baby Driver","Action",7.5,2017],["Ocean's Eleven","Crime",7.7,2001],["Ocean's Twelve","Crime",6.5,2004],["American Psycho","Drama",7.6,2000],["Collateral","Thriller",7.5,2004],["Mystic River","Crime",7.9,2003],["Primal Fear","Drama",7.7,1996],["The Game","Thriller",7.7,1997],["Wind River","Crime",7.7,2017],["Nightmare Alley","Thriller",7.0,2021],
+
+      // Action, Adventure & Disaster Epics
+      ["Speed","Action",7.3,1994],["The Rock","Action",7.4,1996],["Face/Off","Action",7.3,1997],["Con Air","Action",6.9,1997],["Independence Day","Sci-Fi",7.0,1996],["Armageddon","Sci-Fi",6.7,1998],["Twister","Action",6.5,1996],["The Day After Tomorrow","Sci-Fi",6.5,2004],["2012","Action",5.8,2009],["World War Z","Action",7.0,2013],["I Am Legend","Sci-Fi",7.2,2007],["Men in Black","Sci-Fi",7.3,1997],["Men in Black II","Comedy",6.2,2002],["National Treasure","Action",6.9,2004],["Lara Croft: Tomb Raider","Action",5.8,2001],["The Mummy","Action",7.1,1999],["The Mummy Returns","Action",6.4,2001],["King Kong","Action",7.2,2005],["Godzilla","Action",6.4,2014],["Godzilla Minus One","Action",8.3,2023],
+
+      // War & Historical Epics
+      ["1917","War",8.2,2019],["Dunkirk","War",7.8,2017],["The Revenant","Drama",8.0,2015],["All Quiet on the Western Front","War",7.8,2022],["Black Hawk Down","War",7.7,2001],["Letters from Iwo Jima","War",7.8,2006],["Flags of Our Fathers","War",7.1,2006],["Fury","War",7.5,2014],["The Last Samurai","Action",7.8,2003],["Kingdom of Heaven","War",7.2,2005],["Troy","Action",7.3,2004],["300","Action",7.6,2006],["Apocalypto","Action",7.8,2006],["Master and Commander","Action",7.5,2003],
+
+      // Heartwarming Dramas & Biopics
+      ["The Social Network","Drama",7.8,2010],["Ford v Ferrari","Drama",8.1,2019],["Bohemian Rhapsody","Drama",7.9,2018],["Rocketman","Drama",7.3,2019],["Elvis","Drama",7.3,2022],["The King's Speech","Drama",8.0,2010],["The Theory of Everything","Drama",7.7,2014],["The Imitation Game","Drama",8.0,2014],["A Star Is Born","Romance",7.6,2018],["Cast Away","Drama",7.8,2000],["The Terminal","Comedy",7.4,2004],["Catch Me If You Can","Crime",8.1,2002],["The Pursuit of Happyness","Drama",8.0,2006],["Seven Pounds","Drama",7.6,2008],["Slumdog Millionaire","Drama",8.0,2008],["Lion","Drama",8.0,2016],["Roma","Drama",7.7,2018],["Shoplifters","Drama",7.9,2018],["Drive My Car","Drama",7.6,2021],["Lagaan","Drama",8.1,2001],["Swades","Drama",8.2,2004],["Chak De! India","Drama",8.1,2007],["Ghajini","Action",7.3,2008],
+
+      // Animation & Family Classics
+      ["Ratatouille","Animation",8.1,2007],["The Incredibles","Animation",8.0,2004],["Incredibles 2","Animation",7.6,2018],["Soul","Animation",8.0,2020],["Coco","Animation",8.4,2017],["Moana","Animation",7.6,2016],["Frozen","Animation",7.4,2013],["Frozen II","Animation",6.8,2019],["Tangled","Animation",7.7,2010],["Shrek","Animation",7.9,2001],["Shrek 2","Animation",7.3,2004],["Puss in Boots: The Last Wish","Animation",7.8,2022],["Kung Fu Panda","Animation",7.6,2008],["Kung Fu Panda 2","Animation",7.3,2011],["Despicable Me","Animation",7.6,2010],["Minions","Animation",6.4,2015],["The Super Mario Bros. Movie","Animation",7.0,2023],["Akira","Animation",8.0,1988],["Ghost in the Shell","Animation",7.9,1995],["A Silent Voice","Animation",8.1,2016],["Demon Slayer: Mugen Train","Animation",8.2,2020],["Suzume","Animation",7.6,2022],["Weathering with You","Animation",7.5,2019],["The Boy and the Heron","Animation",7.5,2023],["Kiki's Delivery Service","Animation",7.8,1989],["Castle in the Sky","Animation",8.0,1986],["Princess Kaguya","Animation",8.0,2013],
+
+      // Comedies & Feel-Good Crowd Favorites
+      ["Superbad","Comedy",7.6,2007],["Step Brothers","Comedy",6.9,2008],["Anchorman: The Legend of Ron Burgundy","Comedy",7.1,2004],["The Hangover","Comedy",7.7,2009],["The Hangover Part II","Comedy",6.5,2011],["Shaun of the Dead","Comedy",7.9,2004],["Hot Fuzz","Comedy",7.8,2007],["The World's End","Comedy",7.0,2013],["Zombieland","Comedy",7.6,2009],["21 Jump Street","Comedy",7.2,2012],["22 Jump Street","Comedy",7.0,2014],["Tropic Thunder","Comedy",7.1,2008],["Dumb and Dumber","Comedy",7.3,1994],["The Mask","Comedy",6.9,1994],["Ace Ventura: Pet Detective","Comedy",6.9,1994],["Bruce Almighty","Comedy",6.8,2003],["Liar Liar","Comedy",6.9,1997],["School of Rock","Comedy",7.2,2003],["Mean Girls","Comedy",7.1,2004],["Clueless","Comedy",6.9,1995],["Legally Blonde","Comedy",6.5,2001],["Ferris Bueller's Day Off","Comedy",7.8,1986],["The Breakfast Club","Drama",7.8,1985],["Home Alone","Comedy",7.7,1990],["Home Alone 2: Lost in New York","Comedy",6.9,1992],["Ghostbusters","Comedy",7.8,1984],["PK","Comedy",8.1,2014],["Zindagi Na Milegi Dobara","Comedy",8.2,2011],["Dil Chahta Hai","Comedy",8.1,2001],["Queen","Comedy",8.1,2013],["Chhichhore","Comedy",8.3,2019],
+
+      // Romance & Tearjerkers
+      ["Titanic","Romance",7.9,1997],["The Notebook","Romance",7.8,2004],["Pride & Prejudice","Romance",7.8,2005],["500 Days of Summer","Romance",7.7,2009],["About Time","Romance",7.8,2013],["Before Sunset","Romance",8.1,2004],["Before Midnight","Romance",7.9,2013],["Crazy Rich Asians","Romance",6.9,2018],["Notting Hill","Romance",7.2,1999],["Love Actually","Romance",7.6,2003],["10 Things I Hate About You","Romance",7.3,1999],["Pretty Woman","Romance",7.1,1990],["Jerry Maguire","Romance",7.3,1996],["Brokeback Mountain","Drama",7.7,2005],["Call Me by Your Name","Romance",7.8,2017],["Portrait of a Lady on Fire","Romance",8.1,2019],["Dilwale Dulhania Le Jayenge","Romance",8.0,1995],["Kabhi Khushi Kabhie Gham...","Drama",7.4,2001],["Kal Ho Naa Ho","Romance",7.9,2003],["Jab We Met","Romance",7.9,2007],["Yeh Jawaani Hai Deewani","Romance",7.2,2013]
+    ];
+
+    const rawShowsCore = [
       ["Breaking Bad","Drama",9.5,2008],["Planet Earth II","Documentary",9.5,2016],["Planet Earth","Documentary",9.4,2006],["Band of Brothers","War",9.4,2001],["Chernobyl","Drama",9.4,2019],["The Wire","Crime",9.3,2002],["Avatar: The Last Airbender","Animation",9.3,2005],["Blue Planet II","Documentary",9.3,2017],["The Sopranos","Crime",9.2,1999],["Cosmos: A Spacetime Odyssey","Documentary",9.3,2014],["Our Planet","Documentary",9.3,2019],["Cosmos","Documentary",9.3,1980],["Game of Thrones","Fantasy",9.2,2011],["Rick and Morty","Animation",9.1,2013],["The Twilight Zone","Sci-Fi",9.1,1959],["Sherlock","Crime",9.1,2010],["The World at War","Documentary",9.2,1973],["Fullmetal Alchemist: Brotherhood","Animation",9.1,2009],["The Last Dance","Documentary",9.1,2020],["Life","Documentary",9.1,2009],["Batman: The Animated Series","Animation",9.0,1992],["The Office","Comedy",9.0,2005],["True Detective","Crime",8.9,2014],["Firefly","Sci-Fi",9.0,2002],["Death Note","Animation",8.9,2006],["Fargo","Crime",8.9,2014],["Only Fools and Horses","Comedy",9.0,1981],["Attack on Titan","Animation",9.1,2013],["Friends","Comedy",8.9,1994],["Seinfeld","Comedy",8.9,1989],["Hunter x Hunter","Animation",9.0,2011],["Better Call Saul","Drama",9.0,2015],["The Beatles: Get Back","Documentary",9.0,2021],["Stranger Things","Sci-Fi",8.7,2016],["Peaky Blinders","Crime",8.8,2013],["Black Mirror","Sci-Fi",8.7,2011],["The Crown","Drama",8.6,2016],["Succession","Drama",8.9,2018],["Mad Men","Drama",8.7,2007],["The Boys","Action",8.7,2019],["House of Cards","Drama",8.6,2013],["Narcos","Crime",8.8,2015],["Mindhunter","Crime",8.6,2017],["Dark","Sci-Fi",8.7,2017],["The Mandalorian","Sci-Fi",8.7,2019],["Dexter","Crime",8.7,2006],["The Marvelous Mrs. Maisel","Comedy",8.7,2017],["Westworld","Sci-Fi",8.5,2016],["Arrested Development","Comedy",8.7,2003],["Parks and Recreation","Comedy",8.6,2009]
     ];
 
+    const rawShowsExpanded = [
+      // Acclaimed Modern Prestige & Recent TV
+      ["Arcane","Animation",9.0,2021],["The Last of Us","Drama",8.8,2023],["Shogun","Drama",8.7,2024],["Severance","Sci-Fi",8.7,2022],["The Bear","Comedy",8.6,2022],["Fallout","Sci-Fi",8.4,2024],["Andor","Sci-Fi",8.4,2022],["House of the Dragon","Fantasy",8.4,2022],["Ted Lasso","Comedy",8.8,2020],["The Queen's Gambit","Drama",8.5,2020],["Fleabag","Comedy",8.7,2016],["Squid Game","Thriller",8.0,2021],["Yellowstone","Drama",8.7,2018],["Euphoria","Drama",8.3,2019],["The White Lotus","Comedy",8.0,2021],["Slow Horses","Thriller",8.2,2022],["Downton Abbey","Drama",8.7,2010],["Rome","Drama",8.7,2005],["Deadwood","Western",8.6,2004],["Boardwalk Empire","Crime",8.6,2010],["Justified","Crime",8.6,2010],["Line of Duty","Crime",8.7,2012],["Twin Peaks","Thriller",8.8,1990],["Mr. Robot","Thriller",8.5,2015],["Ozark","Crime",8.5,2017],["Homeland","Thriller",8.3,2011],["The Americans","Drama",8.4,2013],["Bates Motel","Horror",8.1,2013],["Hannibal","Horror",8.5,2013],
+
+      // Mega-Popular Sitcoms & Binge Hits
+      ["Brooklyn Nine-Nine","Comedy",8.4,2013],["Modern Family","Comedy",8.5,2009],["Community","Comedy",8.5,2009],["How I Met Your Mother","Comedy",8.3,2005],["The Big Bang Theory","Comedy",8.2,2007],["It's Always Sunny in Philadelphia","Comedy",8.8,2005],["Curb Your Enthusiasm","Comedy",8.8,2000],["Schitt's Creek","Comedy",8.5,2015],["New Girl","Comedy",7.8,2011],["Gilmore Girls","Comedy",7.8,2000],["Sex and the City","Comedy",7.3,1998],["Suits","Drama",8.4,2011],["Grey's Anatomy","Drama",7.6,2005],["House M.D.","Drama",8.7,2004],["Lost","Drama",8.3,2004],["Prison Break","Action",8.3,2005],["24","Action",8.4,2001],["Supernatural","Fantasy",8.4,2005],["The Vampire Diaries","Fantasy",7.7,2009],["Teen Wolf","Fantasy",7.7,2011],["Lucifer","Fantasy",8.1,2016],["Once Upon a Time","Fantasy",7.7,2011],["Gossip Girl","Drama",7.5,2007],["Pretty Little Liars","Drama",7.4,2010],["Bridgerton","Romance",7.4,2020],["Emily in Paris","Comedy",6.8,2020],["The Witcher","Fantasy",8.0,2019],["Wednesday","Fantasy",8.1,2022],["The Walking Dead","Horror",8.1,2010],["American Horror Story","Horror",8.0,2011],["Money Heist","Crime",8.2,2017],["Lupin","Crime",7.5,2021],["Elite","Drama",7.4,2018],["Dark Desire","Thriller",6.5,2020],
+
+      // Sci-Fi, Space & Fantasy Classics
+      ["Battlestar Galactica","Sci-Fi",8.7,2004],["Star Trek: The Next Generation","Sci-Fi",8.7,1987],["Star Trek: Deep Space Nine","Sci-Fi",8.1,1993],["The X-Files","Sci-Fi",8.6,1993],["Doctor Who","Sci-Fi",8.6,2005],["The Expanse","Sci-Fi",8.5,2015],["Fringe","Sci-Fi",8.4,2008],["Orphan Black","Sci-Fi",8.3,2013],["Sense8","Sci-Fi",8.2,2015],["Person of Interest","Sci-Fi",8.5,2011],["Loki","Sci-Fi",8.2,2021],["WandaVision","Fantasy",7.9,2021],["Daredevil","Action",8.6,2015],["The Punisher","Action",8.5,2017],["Vikings","Action",8.5,2013],["The Last Kingdom","Action",8.5,2015],["Spartacus","Action",8.5,2010],["Outlander","Romance",8.4,2014],["The Handmaid's Tale","Drama",8.4,2017],["The Good Place","Comedy",8.2,2016],["Silicon Valley","Comedy",8.5,2014],["Barry","Comedy",8.4,2018],["Atlanta","Comedy",8.6,2016],
+
+      // Anime Giants & Animated Series
+      ["One Piece","Animation",8.9,1999],["Cowboy Bebop","Animation",8.9,1998],["Gravity Falls","Animation",8.9,2012],["Vinland Saga","Animation",8.8,2019],["BoJack Horseman","Animation",8.8,2014],["Invincible","Animation",8.7,2021],["Naruto: Shippuden","Animation",8.7,2007],["Naruto","Animation",8.4,2002],["Bleach","Animation",8.2,2004],["Dragon Ball Z","Animation",8.8,1989],["Demon Slayer: Kimetsu no Yaiba","Animation",8.6,2019],["Jujutsu Kaisen","Animation",8.6,2020],["Chainsaw Man","Animation",8.4,2022],["Cyberpunk: Edgerunners","Animation",8.6,2022],["My Hero Academia","Animation",8.3,2016],["One Punch Man","Animation",8.7,2015],["Mob Psycho 100","Animation",8.6,2016],["Steins;Gate","Animation",8.8,2011],["Code Geass","Animation",8.7,2006],["Neon Genesis Evangelion","Animation",8.5,1995],["Monster","Animation",8.7,2004],["Haikyu!!","Animation",8.7,2014],["Samurai Champloo","Animation",8.6,2004],["Love, Death & Robots","Animation",8.4,2019],["Castlevania","Animation",8.3,2017],["South Park","Animation",8.7,1997],["Family Guy","Animation",8.2,1999],["The Simpsons","Animation",8.7,1989],["Futurama","Animation",8.5,1999],["Adventure Time","Animation",8.6,2010],["Over the Garden Wall","Animation",8.8,2014],
+
+      // Acclaimed Indian & International Streaming Phenomenons
+      ["Scam 1992","Drama",9.2,2020],["Panchayat","Comedy",8.9,2020],["Gullak","Comedy",9.1,2019],["Kota Factory","Drama",9.0,2019],["Rocket Boys","Drama",8.9,2022],["The Family Man","Action",8.7,2019],["Sacred Games","Crime",8.5,2018],["Mirzapur","Crime",8.5,2018],["Delhi Crime","Crime",8.5,2019],["Paatal Lok","Crime",8.1,2020],["Asur: Welcome to Your Dark Side","Thriller",8.5,2020],["Special OPS","Action",8.6,2020],["Farzi","Crime",8.4,2023],["Guns & Gulaabs","Comedy",7.7,2023],["Kohra","Crime",7.6,2023],["Fauda","Action",8.3,2015],["Gomorrah","Crime",8.7,2014],["Babylon Berlin","Crime",8.4,2017],["Borgen","Drama",8.5,2010],["The Bridge","Crime",8.6,2011],["Dark (Season 1)","Sci-Fi",8.7,2017],
+
+      // Landmark Mini-Series & Documentaries
+      ["The Pacific","War",8.3,2010],["Generation Kill","War",8.5,2008],["When They See Us","Drama",8.9,2019],["Mare of Easttown","Crime",8.4,2021],["Sharp Objects","Drama",8.1,2018],["The Night Of","Crime",8.4,2016],["Unbelievable","Crime",8.4,2019],["Dopesick","Drama",8.6,2021],["Making a Murderer","Documentary",8.6,2015],["Wild Wild Country","Documentary",8.1,2018],["Tiger King","Documentary",7.5,2020],["Formula 1: Drive to Survive","Documentary",8.5,2019],["Chef's Table","Documentary",8.5,2015],["The Blue Planet","Documentary",9.0,2001],["Frozen Planet","Documentary",9.0,2011]
+    ];
+
+    // Merge datasets
+    const combinedMovies = [...rawMoviesCore, ...rawMoviesExpanded];
+    const combinedShows = [...rawShowsCore, ...rawShowsExpanded];
+
     // ==========================================
-    // 2. GENRE VISUAL THEMES & PROCEDURAL SVG POSTER ENGINE
+    // 2. GENRE VISUAL THEMES & PROCEDURAL POSTERS
     // ==========================================
     const genreThemes = {
       "Drama":       { c1: "#1e1b4b", c2: "#4338ca", accent: "#818cf8", icon: "fa-masks-theater" },
@@ -598,22 +792,22 @@ button,select,input{transition:all .2s ease}
     };
 
     const platforms = ["Netflix", "Max", "Prime Video", "Disney+", "Hulu"];
-    const extraMovies = [
-      ["Oppenheimer","Drama",8.3,2023],["Dune: Part Two","Sci-Fi",8.5,2024],["Dune","Sci-Fi",8.0,2021],["Spider-Man: Across the Spider-Verse","Animation",8.5,2023],["Top Gun: Maverick","Action",8.2,2022],["Everything Everywhere All at Once","Sci-Fi",7.8,2022],["The Batman","Action",7.8,2022],["Avengers: Infinity War","Action",8.4,2018],["Logan","Action",8.1,2017],["Deadpool","Action",8.0,2016],["Guardians of the Galaxy","Sci-Fi",8.0,2014],["Iron Man","Action",7.9,2008],["Mission: Impossible - Fallout","Action",7.7,2018],["Casino Royale","Action",8.0,2006],["Skyfall","Action",7.8,2012],["John Wick","Action",7.4,2014],["Baahubali 2: The Conclusion","Action",8.2,2017],["RRR","Action",7.8,2022],["Kantara","Action",8.2,2022],["The Martian","Sci-Fi",8.0,2015],["Gravity","Sci-Fi",7.7,2013],["Ex Machina","Sci-Fi",7.7,2014],["Edge of Tomorrow","Sci-Fi",7.9,2014],["Blade Runner 2049","Sci-Fi",8.0,2017],["E.T. the Extra-Terrestrial","Sci-Fi",7.9,1982],["Tenet","Sci-Fi",7.3,2020],["Get Out","Horror",7.7,2017],["Hereditary","Horror",7.3,2018],["The Exorcist","Horror",8.1,1973],["Halloween","Horror",7.7,1978],["A Quiet Place","Horror",7.5,2018],["Train to Busan","Horror",7.6,2016],["Nightcrawler","Thriller",7.7,2014],["Knives Out","Thriller",7.9,2019],["Black Swan","Thriller",8.0,2010],["Mulholland Drive","Thriller",7.9,2001],["The Handmaiden","Thriller",8.1,2016],["Andhadhun","Thriller",8.2,2018],["Anatomy of a Fall","Thriller",7.6,2023],["Zodiac","Crime",7.7,2007],["Taxi Driver","Crime",8.2,1976],["Gangs of Wasseypur","Crime",8.2,2012],["Killers of the Flower Moon","Crime",7.6,2023],["Ocean's Eleven","Crime",7.7,2001],["1917","War",8.2,2019],["Dunkirk","War",7.8,2017],["The Zone of Interest","War",7.3,2023],["The Revenant","Drama",8.0,2015],["The Imitation Game","Drama",8.0,2014],["Ford v Ferrari","Drama",8.1,2019],["12th Fail","Drama",8.8,2023],["Jai Bhim","Drama",8.7,2021],["Lagaan","Drama",8.1,2001],["Bohemian Rhapsody","Drama",7.9,2018],["The Social Network","Drama",7.8,2010],["Roma","Drama",7.7,2018],["Shoplifters","Drama",7.9,2018],["The Brutalist","Drama",7.4,2024],["Ratatouille","Animation",8.1,2007],["Soul","Animation",8.0,2020],["The Incredibles","Animation",8.0,2004],["A Silent Voice","Animation",8.1,2016],["Akira","Animation",8.0,1988],["Ghost in the Shell","Animation",7.9,1995],["Demon Slayer: Mugen Train","Animation",8.2,2020],["Shrek","Animation",7.9,2001],["Inside Out 2","Animation",7.6,2024],["Shaun of the Dead","Comedy",7.9,2004],["Hot Fuzz","Comedy",7.8,2007],["Ferris Bueller's Day Off","Comedy",7.8,1986],["Ghostbusters","Comedy",7.8,1984],["Home Alone","Comedy",7.7,1990],["Superbad","Comedy",7.6,2007],["PK","Comedy",8.1,2014],["Zindagi Na Milegi Dobara","Comedy",8.1,2011],["Dil Chahta Hai","Comedy",8.1,2001],["Poor Things","Comedy",7.8,2023],["The Holdovers","Comedy",7.9,2023],["Titanic","Romance",7.9,1997],["Past Lives","Romance",7.9,2023],["Pride & Prejudice","Romance",7.8,2005],["Dilwale Dulhania Le Jayenge","Romance",8.0,1995],["The Notebook","Romance",7.8,2004]
-    ];
-    const extraShows = [
-      ["Arcane","Animation",9.0,2021],["One Piece","Animation",8.9,1999],["Cowboy Bebop","Animation",8.9,1998],["Gravity Falls","Animation",8.9,2012],["Vinland Saga","Animation",8.8,2019],["BoJack Horseman","Animation",8.8,2014],["Invincible","Animation",8.7,2021],["Naruto: Shippuden","Animation",8.7,2007],["South Park","Animation",8.7,1997],["Demon Slayer: Kimetsu no Yaiba","Animation",8.6,2019],["Jujutsu Kaisen","Animation",8.6,2020],["Cyberpunk: Edgerunners","Animation",8.6,2022],["Love, Death & Robots","Animation",8.4,2019],["Severance","Sci-Fi",8.7,2022],["Battlestar Galactica","Sci-Fi",8.7,2004],["Star Trek: The Next Generation","Sci-Fi",8.7,1987],["The X-Files","Sci-Fi",8.6,1993],["The Expanse","Sci-Fi",8.5,2015],["Andor","Sci-Fi",8.4,2022],["Fallout","Sci-Fi",8.3,2024],["Loki","Sci-Fi",8.2,2021],["The Last of Us","Drama",8.7,2023],["Shogun","Drama",8.7,2024],["Yellowstone","Drama",8.7,2018],["House M.D.","Drama",8.7,2004],["Downton Abbey","Drama",8.7,2010],["Rome","Drama",8.7,2005],["The Queen's Gambit","Drama",8.5,2020],["The Handmaid's Tale","Drama",8.4,2017],["Euphoria","Drama",8.3,2019],["Lost","Drama",8.3,2004],["Scam 1992","Drama",9.2,2020],["Gullak","Comedy",9.1,2019],["Kota Factory","Drama",9.0,2019],["Rocket Boys","Drama",8.9,2022],["Panchayat","Comedy",8.9,2020],["Ted Lasso","Comedy",8.8,2020],["Fleabag","Comedy",8.7,2016],["The Bear","Comedy",8.6,2022],["It's Always Sunny in Philadelphia","Comedy",8.7,2005],["Curb Your Enthusiasm","Comedy",8.7,2000],["Schitt's Creek","Comedy",8.5,2015],["Modern Family","Comedy",8.5,2009],["Community","Comedy",8.5,2009],["Brooklyn Nine-Nine","Comedy",8.4,2013],["How I Met Your Mother","Comedy",8.3,2005],["Line of Duty","Crime",8.7,2012],["Mr. Robot","Thriller",8.5,2015],["Twin Peaks","Thriller",8.8,1990],["Slow Horses","Thriller",8.2,2022],["Squid Game","Thriller",8.0,2021],["Ozark","Crime",8.4,2017],["Boardwalk Empire","Crime",8.4,2010],["Sacred Games","Crime",8.5,2018],["Mirzapur","Crime",8.5,2018],["Delhi Crime","Crime",8.5,2019],["Money Heist","Crime",8.2,2017],["The Family Man","Action",8.7,2019],["Vikings","Action",8.5,2013],["Fauda","Action",8.3,2015],["House of the Dragon","Fantasy",8.4,2022],["The Witcher","Fantasy",8.0,2019],["Wednesday","Fantasy",8.1,2022],["The Walking Dead","Horror",8.1,2010],["The Pacific","War",8.3,2010],["Generation Kill","War",8.4,2008],["Frozen Planet","Documentary",9.0,2011],["The Blue Planet","Documentary",9.0,2001],["Making a Murderer","Documentary",8.6,2015],["Chef's Table","Documentary",8.6,2015]
-    ];
     const globalDatabase = {};
     const allTitles = [];
     const movies = [];
     const tvShows = [];
     const categoryData = {};
-    const posterCache = (()=>{try{return JSON.parse(localStorage.getItem('cs_posters')||'{}')}catch(e){return {}}})();
     const summaryCache = {};
-    let tmdbApiKey = "";
 
-    // Deterministic hash so platforms don't randomly shuffle on refresh
+    // Persistent poster cache in localStorage
+    const posterCache = (() => {
+      try {
+        return JSON.parse(localStorage.getItem('cs_posters_v2') || '{}');
+      } catch (e) {
+        return {};
+      }
+    })();
+
     function hashString(str) {
       let h = 2166136261 >>> 0;
       for (let i = 0; i < str.length; i++) {
@@ -623,14 +817,17 @@ button,select,input{transition:all .2s ease}
       return h >>> 0;
     }
 
-    function processRawData(raw, dest, type, baseLen) {
+    function processDataset(raw, dest, type) {
       raw.forEach(([name, gen, rating, year], index) => {
-        const title = globalDatabase[name] ? name + " (TV)" : name;
+        const title = (type === 'show' && globalDatabase[name]) ? `${name} (Series)` : name;
+        if (globalDatabase[title]) return; // avoid exact duplicate collision
+
         const hash = hashString(title + year);
         const plat = platforms[hash % platforms.length];
         const rank = index + 1;
         const item = {
           title,
+          cleanName: name,
           genre: gen,
           rating: Number(rating).toFixed(1),
           year,
@@ -638,7 +835,6 @@ button,select,input{transition:all .2s ease}
           platformName: plat,
           type
         };
-        item.name = name; item.isNew = index >= baseLen;
         globalDatabase[title] = item;
         allTitles.push(title);
         dest.push(item);
@@ -646,19 +842,19 @@ button,select,input{transition:all .2s ease}
       });
     }
 
-    processRawData(rawMovies.concat(extraMovies), movies, 'movie', rawMovies.length);
-    processRawData(rawShows.concat(extraShows), tvShows, 'show', rawShows.length);
+    processDataset(combinedMovies, movies, 'movie');
+    processDataset(combinedShows, tvShows, 'show');
     Object.values(categoryData).forEach(list => list.sort((a, b) => b.rating - a.rating));
 
-    // Generates a rich, bespoke SVG movie poster data URI that NEVER fails to load
+    // Generates high-contrast bespoke procedural SVG posters with typography
     function generateStylizedPosterDataURI(item) {
       const theme = genreThemes[item.genre] || genreThemes["Drama"];
-      const safeTitle = item.title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      const safeTitle = item.cleanName.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
       const words = safeTitle.split(' ');
       const lines = [];
       let currentLine = '';
       words.forEach(w => {
-        if ((currentLine + ' ' + w).trim().length <= 15) {
+        if ((currentLine + ' ' + w).trim().length <= 14) {
           currentLine = (currentLine + ' ' + w).trim();
         } else {
           if (currentLine) lines.push(currentLine);
@@ -669,8 +865,8 @@ button,select,input{transition:all .2s ease}
       const displayLines = lines.slice(0, 4);
 
       const h = hashString(item.title);
-      const cx = 60 + (h % 280);
-      const cy = 90 + ((h >> 4) % 240);
+      const cx = 70 + (h % 260);
+      const cy = 100 + ((h >> 4) % 220);
 
       const textSvg = displayLines.map((line, idx) => {
         const yPos = 390 + (idx * 34);
@@ -682,99 +878,141 @@ button,select,input{transition:all .2s ease}
           <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="${theme.c1}"/>
             <stop offset="65%" stop-color="${theme.c2}"/>
-            <stop offset="100%" stop-color="#090B10"/>
+            <stop offset="100%" stop-color="#080A0F"/>
           </linearGradient>
           <radialGradient id="orb" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="${theme.accent}" stop-opacity="0.38"/>
+            <stop offset="0%" stop-color="${theme.accent}" stop-opacity="0.45"/>
             <stop offset="100%" stop-color="${theme.accent}" stop-opacity="0"/>
           </radialGradient>
         </defs>
         <rect width="400" height="600" fill="url(#bg)"/>
-        <circle cx="${cx}" cy="${cy}" r="210" fill="url(#orb)"/>
-        <circle cx="${400 - cx}" cy="${520 - cy}" r="150" fill="url(#orb)"/>
-        <g stroke="${theme.accent}" stroke-opacity="0.12" stroke-width="1">
+        <circle cx="${cx}" cy="${cy}" r="220" fill="url(#orb)"/>
+        <circle cx="${400 - cx}" cy="${520 - cy}" r="160" fill="url(#orb)"/>
+        <g stroke="${theme.accent}" stroke-opacity="0.15" stroke-width="1">
           <line x1="28" y1="28" x2="372" y2="28"/>
           <line x1="28" y1="572" x2="372" y2="572"/>
           <rect x="20" y="20" width="360" height="560" rx="16" fill="none"/>
         </g>
-        <rect x="32" y="40" width="84" height="28" rx="6" fill="#000000" fill-opacity="0.55"/>
-        <text x="74" y="59" text-anchor="middle" fill="#F5C518" font-family="Inter, sans-serif" font-weight="800" font-size="13">★ ${item.rating}</text>
-        <text x="364" y="59" text-anchor="end" fill="${theme.accent}" font-family="Inter, sans-serif" font-weight="700" font-size="13" opacity="0.85">#${item.rank}</text>
-        <text x="32" y="348" fill="${theme.accent}" font-family="Inter, sans-serif" font-weight="700" font-size="13" letter-spacing="2.5">${item.genre.toUpperCase()} · ${item.year}</text>
+        <rect x="32" y="40" width="86" height="30" rx="8" fill="#000000" fill-opacity="0.65"/>
+        <text x="75" y="60" text-anchor="middle" fill="#F5C518" font-family="Inter, sans-serif" font-weight="800" font-size="13">★ ${item.rating}</text>
+        <text x="364" y="60" text-anchor="end" fill="${theme.accent}" font-family="Inter, sans-serif" font-weight="700" font-size="13" opacity="0.9">#${item.rank}</text>
+        <text x="32" y="348" fill="${theme.accent}" font-family="Inter, sans-serif" font-weight="700" font-size="13" letter-spacing="2">${item.genre.toUpperCase()} · ${item.year}</text>
         ${textSvg}
-        <text x="32" y="548" fill="#9ca3af" font-family="Inter, sans-serif" font-weight="600" font-size="12" letter-spacing="1">CINESPHERE ARCHIVE COLLECTION</text>
+        <text x="32" y="550" fill="#9ca3af" font-family="Inter, sans-serif" font-weight="600" font-size="11" letter-spacing="1">CINESPHERE VAULT COLLECTION</text>
       </svg>`;
 
       return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
     }
 
     // ==========================================
-    // 3. ZERO-CONFIG REAL POSTER FETCHER (TMDB + TVMaze + Wikipedia REST API)
+    // 3. ZERO-KEY ARTWORK PIPELINE (iTunes + TVMaze + Wikipedia)
     // ==========================================
+    let activeFetches = 0;
+    const fetchQueue = [];
+    let saveTimeout = null;
+
     async function fetchPoster(item) {
-      const cacheKey = item.type + ':' + item.title; const nm = item.name || item.title;
+      const cacheKey = item.type + ':' + item.title;
       if (posterCache[cacheKey] !== undefined) return posterCache[cacheKey];
 
-      // 1. Optional TMDB API Key (if user provided one)
-      if (tmdbApiKey) {
-        const kind = item.type === 'show' ? 'tv' : 'movie';
-        try {
-          const url = `https://api.themoviedb.org/3/search/${kind}?api_key=${encodeURIComponent(tmdbApiKey)}&query=${encodeURIComponent(nm)}&year=${item.year}`;
-          const res = await fetch(url);
-          if (res.ok) {
-            const data = await res.json();
-            const first = data.results && data.results[0];
-            if (first && first.poster_path) {
-              if (first.overview) summaryCache[cacheKey] = first.overview;
-              const posterUrl = `https://image.tmdb.org/t/p/w500${first.poster_path}`;
-              posterCache[cacheKey] = posterUrl;
-              return posterUrl;
-            }
-          }
-        } catch (e) {}
+      // Concurrency governor (max 6 active requests)
+      if (activeFetches >= 6) {
+        await new Promise(resolve => fetchQueue.push(resolve));
       }
+      activeFetches++;
 
-      // 2. Free Keyless TVMaze API for TV Shows
-      if (item.type === 'show') {
-        try {
-          const res = await fetch(`https://api.tvmaze.com/singlesearch/shows?q=${encodeURIComponent(nm)}`);
-          if (res.ok) {
-            const data = await res.json();
-            if (data.summary) {
-              summaryCache[cacheKey] = data.summary.replace(/<[^>]+>/g, '');
-            }
-            const img = data.image && (data.image.original || data.image.medium);
-            if (img) {
-              posterCache[cacheKey] = img;
-              return img;
-            }
-          }
-        } catch (e) {}
-      }
-
-      // 3. Free Keyless Wikipedia Page Summary API for Movies & Shows
       try {
-        const wikiQueries = [`${nm}_(${item.year}_film)`, `${nm}_(film)`, nm];
-        for (const q of wikiQueries) {
-          const wikiUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(q.replace(/ /g, '_'))}`;
-          const res = await fetch(wikiUrl);
-          if (res.ok) {
-            const data = await res.json();
-            if (data.type === 'standard') {
-              if (data.extract && !summaryCache[cacheKey]) {
-                summaryCache[cacheKey] = data.extract;
+        const queryName = item.cleanName || item.title;
+
+        // Pipeline 1: Movies -> Free iTunes Movie Search API (Ultra-crisp official posters 600x900)
+        if (item.type === 'movie') {
+          try {
+            const res = await fetch(`https://itunes.apple.com/search?media=movie&entity=movie&limit=4&term=${encodeURIComponent(queryName)}`);
+            if (res.ok) {
+              const data = await res.json();
+              const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+              const match = (data.results || []).find(r => {
+                const sameName = norm(r.trackName) === norm(queryName);
+                const relYear = r.releaseDate ? parseInt(r.releaseDate.slice(0, 4)) : 0;
+                return sameName && (!relYear || Math.abs(relYear - item.year) <= 2);
+              }) || data.results[0];
+
+              if (match && match.artworkUrl100) {
+                const highRes = match.artworkUrl100.replace('100x100bb', '600x900bb');
+                posterCache[cacheKey] = highRes;
+                if (match.longDescription && !summaryCache[cacheKey]) {
+                  summaryCache[cacheKey] = match.longDescription;
+                }
+                scheduleSavePosterCache();
+                return highRes;
               }
-              if (data.thumbnail && data.thumbnail.source) {
-                posterCache[cacheKey] = data.thumbnail.source;
-                return data.thumbnail.source;
+            }
+          } catch (e) {}
+        }
+
+        // Pipeline 2: TV Shows -> Free TVMaze Single Search API
+        if (item.type === 'show') {
+          try {
+            const res = await fetch(`https://api.tvmaze.com/singlesearch/shows?q=${encodeURIComponent(queryName)}`);
+            if (res.ok) {
+              const data = await res.json();
+              if (data.summary && !summaryCache[cacheKey]) {
+                summaryCache[cacheKey] = data.summary.replace(/<[^>]+>/g, '');
+              }
+              const img = data.image && (data.image.original || data.image.medium);
+              if (img) {
+                posterCache[cacheKey] = img;
+                scheduleSavePosterCache();
+                return img;
+              }
+            }
+          } catch (e) {}
+        }
+
+        // Pipeline 3: Universal Fallback -> Wikipedia Summary API
+        try {
+          const wikiCandidates = [
+            `${queryName}_(${item.year}_film)`,
+            `${queryName}_(film)`,
+            `${queryName}_(TV_series)`,
+            queryName
+          ];
+          for (const cand of wikiCandidates) {
+            const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cand.replace(/ /g, '_'))}`;
+            const res = await fetch(url);
+            if (res.ok) {
+              const data = await res.json();
+              if (data.type === 'standard') {
+                if (data.extract && !summaryCache[cacheKey]) {
+                  summaryCache[cacheKey] = data.extract;
+                }
+                if (data.thumbnail && data.thumbnail.source) {
+                  posterCache[cacheKey] = data.thumbnail.source;
+                  scheduleSavePosterCache();
+                  return data.thumbnail.source;
+                }
               }
             }
           }
-        }
-      } catch (e) {}
+        } catch (e) {}
 
-      posterCache[cacheKey] = null;
-      return null;
+        posterCache[cacheKey] = null;
+        return null;
+      } finally {
+        activeFetches--;
+        const next = fetchQueue.shift();
+        if (next) next();
+      }
+    }
+
+    function scheduleSavePosterCache() {
+      clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(() => {
+        try {
+          const filtered = Object.fromEntries(Object.entries(posterCache).filter(([k, v]) => Boolean(v)));
+          localStorage.setItem('cs_posters_v2', JSON.stringify(filtered));
+        } catch (e) {}
+      }, 1000);
     }
 
     const thumbObserver = new IntersectionObserver((entries) => {
@@ -785,12 +1023,15 @@ button,select,input{transition:all .2s ease}
         const title = imgEl.dataset.title;
         const item = globalDatabase[title];
         if (!item) return;
+
         const realUrl = await fetchPoster(item);
-        if (realUrl) {
-          if (imgEl.getAttribute('src') !== realUrl) { imgEl.style.opacity = 0; imgEl.onload = () => imgEl.style.opacity = 1; imgEl.src = realUrl; }
+        if (realUrl && imgEl.getAttribute('src') !== realUrl) {
+          imgEl.style.opacity = '0';
+          imgEl.onload = () => { imgEl.style.opacity = '1'; };
+          imgEl.src = realUrl;
         }
       });
-    }, { rootMargin: '280px' });
+    }, { rootMargin: '300px' });
 
     function attachThumbObservers(container) {
       if (!container) return;
@@ -798,12 +1039,20 @@ button,select,input{transition:all .2s ease}
     }
 
     // ==========================================
-    // 4. USER STATE (WATCHLIST, WATCHED, TOASTS)
+    // 4. USER STATE (LOCAL STORAGE SYNC)
     // ==========================================
-    const LS=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}};
-    let wishlistTitles = LS('cs_wish',["Inception","The Dark Knight","Breaking Bad","Spirited Away"]).filter(t=>globalDatabase[t]);
-    let myRatings = LS('cs_rate',{});
-    let watchedTitles = LS('cs_watched',["The Shawshank Redemption","Pulp Fiction","Interstellar"]).filter(t=>globalDatabase[t]);
+    const getLocal = (key, def) => {
+      try {
+        const val = JSON.parse(localStorage.getItem(key));
+        return val == null ? def : val;
+      } catch (e) {
+        return def;
+      }
+    };
+
+    let wishlistTitles = getLocal('cs_wishlist', ["Inception", "The Dark Knight", "Breaking Bad", "Spirited Away", "Dune: Part Two"]).filter(t => globalDatabase[t]);
+    let watchedTitles = getLocal('cs_watched', ["The Shawshank Redemption", "Pulp Fiction", "Interstellar", "Stranger Things"]).filter(t => globalDatabase[t]);
+    let myRatings = getLocal('cs_ratings', { "Inception": 5, "The Dark Knight": 5 });
     let activeHubList = 'wishlist';
 
     function showToast(message, icon = "fa-circle-check", color = "text-brand-gold") {
@@ -817,7 +1066,7 @@ button,select,input{transition:all .2s ease}
         toast.style.transform = 'translateY(8px)';
         toast.style.transition = 'all 0.25s ease';
         setTimeout(() => toast.remove(), 250);
-      }, 2800);
+      }, 2600);
     }
 
     function toggleWishlist(title, event) {
@@ -846,8 +1095,26 @@ button,select,input{transition:all .2s ease}
       updateAllCountersAndViews();
     }
 
+    function rateTitle(title, stars) {
+      if (myRatings[title] === stars) {
+        delete myRatings[title];
+        showToast(`Cleared rating for "${title}"`, "fa-star", "text-gray-400");
+      } else {
+        myRatings[title] = stars;
+        showToast(`Rated "${title}" ${stars} ★`, "fa-star", "text-brand-gold");
+      }
+      updateAllCountersAndViews();
+      openDetailModal(title);
+    }
+
     function updateAllCountersAndViews() {
-      try{localStorage.setItem('cs_wish',JSON.stringify(wishlistTitles));localStorage.setItem('cs_watched',JSON.stringify(watchedTitles));localStorage.setItem('cs_rate',JSON.stringify(myRatings))}catch(e){}
+      try {
+        localStorage.setItem('cs_wishlist', JSON.stringify(wishlistTitles));
+        localStorage.setItem('cs_watched', JSON.stringify(watchedTitles));
+        localStorage.setItem('cs_ratings', JSON.stringify(myRatings));
+      } catch (e) {}
+
+      document.getElementById('statTotalTitles').textContent = allTitles.length.toLocaleString();
       document.getElementById('statWatchlistCount').textContent = wishlistTitles.length;
       document.getElementById('statWatchedCount').textContent = watchedTitles.length;
       document.getElementById('hubWishlistCount').textContent = wishlistTitles.length;
@@ -862,7 +1129,9 @@ button,select,input{transition:all .2s ease}
       }
 
       renderHubList();
-      // Update button states across visible cards without losing scroll position
+      renderTasteDNA();
+
+      // Refresh button styles across cards without re-rendering everything
       document.querySelectorAll('[data-wish-btn]').forEach(btn => {
         const t = btn.getAttribute('data-wish-btn');
         const active = wishlistTitles.includes(t);
@@ -876,7 +1145,7 @@ button,select,input{transition:all .2s ease}
     }
 
     // ==========================================
-    // 5. CARD & UI COMPONENT RENDERING
+    // 5. CARD COMPONENT GENERATOR
     // ==========================================
     function createCardHTML(item, isCompactScroll = false) {
       if (!item) return '';
@@ -887,13 +1156,12 @@ button,select,input{transition:all .2s ease}
       const fallbackSvg = generateStylizedPosterDataURI(item);
       const cachedPoster = posterCache[item.type + ':' + item.title] || fallbackSvg;
       const platStyle = platformColors[item.platformName] || "bg-white/10 text-gray-300 border-white/20";
-
-      const widthClass = isCompactScroll ? "w-44 sm:w-52 shrink-0 snap-start" : "w-full";
+      const widthClass = isCompactScroll ? "w-40 sm:w-48 shrink-0 snap-start" : "w-full";
 
       return `
       <div onclick="openDetailModal('${escTitle}')" class="group relative rounded-2xl overflow-hidden bg-brand-card border border-white/10 card-hover cursor-pointer flex flex-col ${widthClass}">
         <!-- Poster Container -->
-        <div class="relative poster-aspect w-full overflow-hidden bg-[#0d1017]">
+        <div class="relative poster-aspect w-full overflow-hidden bg-[#0c0f16]">
           <img
             src="${cachedPoster}"
             data-title="${attrTitle}"
@@ -902,16 +1170,16 @@ button,select,input{transition:all .2s ease}
             class="lazy-poster w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#090B10] via-transparent to-black/30 opacity-85"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#080A0F] via-transparent to-black/35 opacity-90"></div>
 
           <!-- Top Left Rank & Rating -->
           <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
-            <span class="px-2 py-0.5 rounded-lg bg-black/75 backdrop-blur-md text-brand-gold font-bold text-xs flex items-center gap-1 border border-brand-gold/30">
-              <i class="fa-solid fa-star text-[10px]"></i> ${item.rating}
+            <span class="px-2 py-0.5 rounded-lg bg-black/80 backdrop-blur-md text-brand-gold font-extrabold text-[11px] flex items-center gap-1 border border-brand-gold/30">
+              <i class="fa-solid fa-star text-[9px]"></i> ${item.rating}
             </span>
           </div>
 
-          <!-- Top Right Quick Action Buttons -->
+          <!-- Top Right Action Controls -->
           <div class="absolute top-2.5 right-2.5 flex flex-col gap-1.5 z-10">
             <button
               data-wish-btn="${attrTitle}"
@@ -929,57 +1197,63 @@ button,select,input{transition:all .2s ease}
             </button>
           </div>
 
-          <!-- Bottom Platform Pill inside Poster -->
+          <!-- Bottom Platform & Year -->
           <div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-md border backdrop-blur-md ${platStyle}">
+            <span class="text-[9px] font-bold px-2 py-0.5 rounded-md border backdrop-blur-md ${platStyle}">
               ${item.platformName}
             </span>
-            <span class="text-[11px] font-semibold text-gray-300 bg-black/60 px-2 py-0.5 rounded-md">
+            <span class="text-[10px] font-semibold text-gray-300 bg-black/70 px-2 py-0.5 rounded-md">
               ${item.year}
             </span>
           </div>
         </div>
 
-        <!-- Metadata Footer -->
-        <div class="p-3.5 flex-1 flex flex-col justify-between">
+        <!-- Metadata Card Bottom -->
+        <div class="p-3 flex-1 flex flex-col justify-between">
           <div>
             <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-0.5">${item.genre} · #${item.rank}</div>
-            <h3 class="font-bold text-sm text-white group-hover:text-brand-gold transition-colors line-clamp-1" title="${attrTitle}">${item.title}</h3>
+            <h3 class="font-bold text-xs sm:text-sm text-white group-hover:text-brand-gold transition-colors line-clamp-1" title="${attrTitle}">${item.cleanName || item.title}</h3>
           </div>
         </div>
       </div>`;
     }
 
     // ==========================================
-    // 6. DISCOVER TAB & HERO BANNER
+    // 6. SPOTLIGHT HERO & DISCOVER ROWS
     // ==========================================
     const spotlightTitles = [
       {
+        title: "Dune: Part Two",
+        tagline: "Long live the fighters.",
+        blurb: "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family, confronting a choice between love and the fate of the universe."
+      },
+      {
+        title: "Oppenheimer",
+        tagline: "The world forever changes.",
+        blurb: "The gripping story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb, followed by the political and moral aftermath."
+      },
+      {
         title: "Inception",
         tagline: "Your mind is the scene of the crime.",
-        blurb: "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state."
+        blurb: "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during dream states."
+      },
+      {
+        title: "Arcane",
+        tagline: "Two sisters. One city divided.",
+        blurb: "Set in utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic champions and the arcane power that tears them apart."
       },
       {
         title: "The Dark Knight",
         tagline: "Why so serious?",
-        blurb: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
+        blurb: "When the menace known as the Joker wreaks havoc and chaos on Gotham, Batman must accept one of the greatest psychological and physical tests of his ability."
       },
       {
         title: "Breaking Bad",
         tagline: "Change the equation.",
-        blurb: "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student in order to secure his family's future."
-      },
-      {
-        title: "Interstellar",
-        tagline: "Mankind was born on Earth. It was never meant to die here.",
-        blurb: "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans."
-      },
-      {
-        title: "Spirited Away",
-        tagline: "Step inside the spirit realm.",
-        blurb: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches and spirits, a world where humans are changed into beasts."
+        blurb: "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine to secure his family's financial future."
       }
     ];
+
     let currentSpotlightIdx = 0;
 
     function renderHeroSpotlight(idx = 0) {
@@ -991,32 +1265,32 @@ button,select,input{transition:all .2s ease}
       const isW = wishlistTitles.includes(item.title);
 
       const banner = document.getElementById('heroBanner');
-      banner.style.background = `radial-gradient(circle at 80% 20%, ${theme.c2} 0%, ${theme.c1} 45%, #090B10 100%)`;
+      banner.style.background = `radial-gradient(circle at 80% 20%, ${theme.c2} 0%, ${theme.c1} 48%, #080A0F 100%)`;
 
       banner.innerHTML = `
-        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full blur-3xl pointer-events-none hero-glow" style="background:${theme.accent}; opacity:0.18;"></div>
-        <div class="relative z-10 w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full blur-3xl pointer-events-none hero-glow" style="background:${theme.accent}; opacity:0.2;"></div>
+        <div class="relative z-10 w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-6 fade-in">
           <div class="space-y-3 max-w-2xl">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="px-2.5 py-1 rounded-full bg-brand-gold text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-1">
-                <i class="fa-solid fa-bolt"></i> Featured Spotlight
+              <span class="px-2.5 py-1 rounded-full bg-brand-gold text-black font-black text-xs uppercase tracking-wider flex items-center gap-1 shadow-md">
+                <i class="fa-solid fa-bolt"></i> Vault Spotlight
               </span>
-              <span class="px-2.5 py-1 rounded-full bg-white/10 text-white font-semibold text-xs border border-white/15">
+              <span class="px-2.5 py-1 rounded-full bg-black/60 text-white font-extrabold text-xs border border-white/15">
                 ★ ${item.rating} IMDb
               </span>
-              <span class="px-2.5 py-1 rounded-full bg-white/10 text-gray-200 text-xs">
+              <span class="px-2.5 py-1 rounded-full bg-black/50 text-gray-200 text-xs">
                 ${item.genre} · ${item.year}
               </span>
               <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold">
-                Stream on ${item.platformName}
+                Available on ${item.platformName}
               </span>
             </div>
-            <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-none">${item.title}</h1>
-            <p class="text-brand-gold font-medium text-sm italic">"${spot.tagline}"</p>
+            <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-none">${item.cleanName || item.title}</h1>
+            <p class="text-brand-gold font-semibold text-sm italic">"${spot.tagline}"</p>
             <p class="text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-3">${spot.blurb}</p>
             <div class="pt-2 flex flex-wrap items-center gap-3">
-              <button onclick="openDetailModal('${escTitle}')" class="px-5 py-3 rounded-xl bg-brand-gold hover:bg-amber-400 text-black font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-brand-gold/25 transition-all active:scale-95">
-                <i class="fa-solid fa-circle-info"></i> Explore Details & Trailer
+              <button onclick="openDetailModal('${escTitle}')" class="px-5 py-3 rounded-xl bg-brand-gold hover:bg-amber-400 text-black font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-brand-gold/25 transition-all active:scale-95">
+                <i class="fa-solid fa-circle-info"></i> Full Details & Trailer
               </button>
               <button onclick="toggleWishlist('${escTitle}', event); renderHeroSpotlight(${currentSpotlightIdx});" class="px-4 py-3 rounded-xl ${isW ? 'bg-rose-500 text-white' : 'bg-white/10 hover:bg-white/15 text-white'} font-semibold text-xs sm:text-sm flex items-center gap-2 border border-white/15 transition-all">
                 <i class="fa-solid fa-heart"></i> ${isW ? 'In Watchlist' : 'Add to Watchlist'}
@@ -1024,7 +1298,7 @@ button,select,input{transition:all .2s ease}
             </div>
           </div>
 
-          <!-- Spotlight Carousel Switcher Dots -->
+          <!-- Carousel Switcher Indicator Dots -->
           <div class="flex items-center gap-2 self-end">
             ${spotlightTitles.map((s, i) => `
               <button onclick="renderHeroSpotlight(${i})" class="h-2.5 rounded-full transition-all ${i === currentSpotlightIdx ? 'w-8 bg-brand-gold' : 'w-2.5 bg-white/30 hover:bg-white/60'}" title="${s.title}"></button>
@@ -1034,31 +1308,99 @@ button,select,input{transition:all .2s ease}
       `;
     }
 
-    function renderDiscoverRows() {
-      renderHeroSpotlight(0);
-      document.getElementById('statTotalTitles').textContent = allTitles.length;
+    // Mood Curations
+    const moods = {
+      '😂 Pure Comedy': ['Comedy'],
+      '😱 Thrills & Heists': ['Thriller', 'Crime'],
+      '🧠 Mind-Bending': ['Sci-Fi'],
+      '⚔️ Epic Adventures': ['Action', 'Fantasy', 'War'],
+      '💔 Deep Emotions': ['Drama', 'Romance'],
+      '👻 Late Night Chills': ['Horror'],
+      '✨ Animation & Anime': ['Animation'],
+      '🌍 Real Stories': ['Documentary']
+    };
 
-      // Row 1: 9.0+ Pantheon
+    let activeMood = '🧠 Mind-Bending';
+
+    function renderMoodPills() {
+      const c = document.getElementById('moodPills');
+      c.innerHTML = Object.keys(moods).map(k => `
+        <button onclick="selectMood('${k}')" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all border ${activeMood === k ? 'bg-brand-gold text-black border-brand-gold font-bold shadow-md' : 'bg-white/5 hover:bg-white/10 text-gray-300 border-white/10'}">
+          ${k}
+        </button>
+      `).join('');
+    }
+
+    function selectMood(m) {
+      activeMood = m;
+      renderMoodPills();
+      const targetGenres = moods[m];
+      const pool = [...movies, ...tvShows].filter(i => targetGenres.includes(i.genre) && parseFloat(i.rating) >= 7.6);
+      const shuffled = pool.sort(() => 0.5 - Math.random()).slice(0, 16);
+      const row = document.getElementById('moodRow');
+      row.innerHTML = shuffled.map(i => createCardHTML(i, true)).join('');
+      attachThumbObservers(row);
+    }
+
+    function renderDiscoverTab() {
+      renderHeroSpotlight(0);
+      renderMoodPills();
+      selectMood('🧠 Mind-Bending');
+
+      // Row 1: Pantheon (9.0+)
       const pantheon = [...movies, ...tvShows].filter(i => parseFloat(i.rating) >= 9.0).sort((a, b) => b.rating - a.rating);
       const pEl = document.getElementById('discoverPantheonRow');
-      pEl.innerHTML = pantheon.map(item => createCardHTML(item, true)).join('');
+      pEl.innerHTML = pantheon.map(i => createCardHTML(i, true)).join('');
       attachThumbObservers(pEl);
 
-      // Row 2: Sci-Fi & Thrillers
-      const mindBenders = movies.filter(i => i.genre === 'Sci-Fi' || i.genre === 'Thriller').slice(0, 14);
+      // Row 2: Blockbusters & Pop Culture
+      const blockbusterKeywords = ["Avengers", "Spider-Man", "Dune", "Batman", "Avatar", "Star Wars", "Fast", "Transformers", "Harry Potter", "Top Gun", "John Wick", "Deadpool", "Hunger Games", "Mission: Impossible", "Guardians"];
+      const blockbusters = movies.filter(m => blockbusterKeywords.some(kw => m.title.includes(kw))).slice(0, 18);
+      const bEl = document.getElementById('discoverBlockbustersRow');
+      bEl.innerHTML = blockbusters.map(i => createCardHTML(i, true)).join('');
+      attachThumbObservers(bEl);
+
+      // Row 3: Mind-Benders & Thrillers
+      const mindBenders = movies.filter(i => i.genre === 'Sci-Fi' || i.genre === 'Thriller').slice(0, 18);
       const mEl = document.getElementById('discoverMindRow');
-      mEl.innerHTML = mindBenders.map(item => createCardHTML(item, true)).join('');
+      mEl.innerHTML = mindBenders.map(i => createCardHTML(i, true)).join('');
       attachThumbObservers(mEl);
 
-      // Row 3: Prestige TV
+      // Row 4: TV Shows
       const tvEl = document.getElementById('discoverTvRow');
-      tvEl.innerHTML = tvShows.slice(0, 14).map(item => createCardHTML(item, true)).join('');
+      tvEl.innerHTML = tvShows.slice(0, 18).map(i => createCardHTML(i, true)).join('');
       attachThumbObservers(tvEl);
+
+      // Add navigation arrows
+      document.querySelectorAll('#discoverPantheonRow, #discoverBlockbustersRow, #discoverMindRow, #discoverTvRow, #moodRow, #wishlistContainer').forEach(addHorizontalArrows);
+    }
+
+    function addHorizontalArrows(scrollEl) {
+      const parent = scrollEl.parentElement;
+      if (!parent || parent.querySelector('.row-arrow')) return;
+      parent.classList.add('has-arrows');
+
+      const leftBtn = document.createElement('button');
+      leftBtn.className = 'row-arrow left-1';
+      leftBtn.innerHTML = '<i class="fa-solid fa-chevron-left text-sm"></i>';
+      leftBtn.onclick = () => scrollEl.scrollBy({ left: -scrollEl.clientWidth * 0.75, behavior: 'smooth' });
+
+      const rightBtn = document.createElement('button');
+      rightBtn.className = 'row-arrow right-1';
+      rightBtn.innerHTML = '<i class="fa-solid fa-chevron-right text-sm"></i>';
+      rightBtn.onclick = () => scrollEl.scrollBy({ left: scrollEl.clientWidth * 0.75, behavior: 'smooth' });
+
+      parent.appendChild(leftBtn);
+      parent.appendChild(rightBtn);
     }
 
     // ==========================================
-    // 7. MOVIES, SHOWS & CATEGORIES RENDERING
+    // 7. CATALOG BROWSING & PAGINATION
     // ==========================================
+    let moviesPage = 1;
+    let showsPage = 1;
+    const PAGE_SIZE = 36;
+
     function populateGenreSelects() {
       const movieGenres = [...new Set(movies.map(m => m.genre))].sort();
       const showGenres = [...new Set(tvShows.map(s => s.genre))].sort();
@@ -1070,62 +1412,112 @@ button,select,input{transition:all .2s ease}
       sSel.innerHTML = '<option value="All">All Genres</option>' + showGenres.map(g => `<option value="${g}">${g}</option>`).join('');
     }
 
-    function filterAndRenderMovies() {
+    function filterAndRenderMovies(resetPage = true) {
+      if (resetPage) moviesPage = 1;
       const q = document.getElementById('searchMovies').value.toLowerCase().trim();
       const g = document.getElementById('filterMoviesGenre').value;
-      const p = document.getElementById('filterMoviesPlatform').value;
+      const dec = document.getElementById('filterMoviesDecade').value;
       const sort = document.getElementById('sortMovies').value;
 
       let list = movies.filter(item => {
         const matchQ = !q || item.title.toLowerCase().includes(q) || String(item.year).includes(q) || item.genre.toLowerCase().includes(q);
-        const matchG = (g === 'All' || item.genre === g) && decadeOk(item);
-        const matchP = p === 'All' || item.platformName === p;
-        return matchQ && matchG && matchP;
+        const matchG = g === 'All' || item.genre === g;
+        let matchDec = true;
+        if (dec !== 'All') {
+          if (dec === '1950') matchDec = item.year <= 1959;
+          else matchDec = Math.floor(item.year / 10) * 10 === parseInt(dec);
+        }
+        return matchQ && matchG && matchDec;
       });
 
       if (sort === 'year_desc') list.sort((a, b) => b.year - a.year);
       else if (sort === 'year_asc') list.sort((a, b) => a.year - b.year);
       else if (sort === 'title') list.sort((a, b) => a.title.localeCompare(b.title));
-      else list.sort((a, b) => a.rank - b.rank);
+      else list.sort((a, b) => b.rating - a.rating);
 
-      document.getElementById('moviesCountBadge').textContent = list.length;
+      document.getElementById('moviesCountBadge').textContent = list.length.toLocaleString();
       const container = document.getElementById('moviesResults');
+
       if (!list.length) {
         container.className = "py-16 text-center text-gray-400";
         container.innerHTML = `<i class="fa-solid fa-film text-4xl text-gray-600 mb-3 block"></i>No movies matched your filter criteria.`;
-      } else {
-        container.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-5";
-        container.innerHTML = list.map(i => createCardHTML(i, false)).join('');
-        attachThumbObservers(container);
+        document.getElementById('moviesPagination').innerHTML = '';
+        return;
       }
+
+      container.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-5";
+      const totalPages = Math.ceil(list.length / PAGE_SIZE);
+      const start = (moviesPage - 1) * PAGE_SIZE;
+      const slice = list.slice(start, start + PAGE_SIZE);
+
+      container.innerHTML = slice.map(i => createCardHTML(i, false)).join('');
+      attachThumbObservers(container);
+      renderPagination('moviesPagination', moviesPage, totalPages, (p) => {
+        moviesPage = p;
+        filterAndRenderMovies(false);
+        document.getElementById('tab-movies').scrollIntoView({ behavior: 'smooth' });
+      });
     }
 
-    function filterAndRenderShows() {
+    function filterAndRenderShows(resetPage = true) {
+      if (resetPage) showsPage = 1;
       const q = document.getElementById('searchShows').value.toLowerCase().trim();
       const g = document.getElementById('filterShowsGenre').value;
-      const p = document.getElementById('filterShowsPlatform').value;
+      const sort = document.getElementById('sortShows').value;
 
-      const list = tvShows.filter(item => {
-        const matchQ = !q || item.title.toLowerCase().includes(q) || String(item.year).includes(q);
-        const matchG = (g === 'All' || item.genre === g) && decadeOk(item);
-        const matchP = p === 'All' || item.platformName === p;
-        return matchQ && matchG && matchP;
+      let list = tvShows.filter(item => {
+        const matchQ = !q || item.title.toLowerCase().includes(q) || String(item.year).includes(q) || item.genre.toLowerCase().includes(q);
+        const matchG = g === 'All' || item.genre === g;
+        return matchQ && matchG;
       });
 
-      document.getElementById('showsCountBadge').textContent = list.length;
+      if (sort === 'year_desc') list.sort((a, b) => b.year - a.year);
+      else if (sort === 'year_asc') list.sort((a, b) => a.year - b.year);
+      else if (sort === 'title') list.sort((a, b) => a.title.localeCompare(b.title));
+      else list.sort((a, b) => b.rating - a.rating);
+
+      document.getElementById('showsCountBadge').textContent = list.length.toLocaleString();
       const container = document.getElementById('showsResults');
+
       if (!list.length) {
         container.className = "py-16 text-center text-gray-400";
         container.innerHTML = `<i class="fa-solid fa-tv text-4xl text-gray-600 mb-3 block"></i>No TV series matched your filter criteria.`;
-      } else {
-        container.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-5";
-        container.innerHTML = list.map(i => createCardHTML(i, false)).join('');
-        attachThumbObservers(container);
+        document.getElementById('showsPagination').innerHTML = '';
+        return;
       }
+
+      container.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-5";
+      const totalPages = Math.ceil(list.length / PAGE_SIZE);
+      const start = (showsPage - 1) * PAGE_SIZE;
+      const slice = list.slice(start, start + PAGE_SIZE);
+
+      container.innerHTML = slice.map(i => createCardHTML(i, false)).join('');
+      attachThumbObservers(container);
+      renderPagination('showsPagination', showsPage, totalPages, (p) => {
+        showsPage = p;
+        filterAndRenderShows(false);
+        document.getElementById('tab-shows').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    function renderPagination(elId, current, total, onPage) {
+      const el = document.getElementById(elId);
+      if (total <= 1) { el.innerHTML = ''; return; }
+      window[`pageHandler_${elId}`] = onPage;
+
+      el.innerHTML = `
+        <button ${current <= 1 ? 'disabled' : ''} onclick="window['pageHandler_${elId}'](${current - 1})" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 disabled:opacity-30 border border-white/10 text-xs font-semibold text-gray-200">
+          <i class="fa-solid fa-chevron-left mr-1"></i> Prev
+        </button>
+        <span class="text-xs text-gray-400 font-medium px-2">Page <strong class="text-white">${current}</strong> of ${total}</span>
+        <button ${current >= total ? 'disabled' : ''} onclick="window['pageHandler_${elId}'](${current + 1})" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 disabled:opacity-30 border border-white/10 text-xs font-semibold text-gray-200">
+          Next <i class="fa-solid fa-chevron-right ml-1"></i>
+        </button>
+      `;
     }
 
     function renderCategoriesTab() {
-      const genres = Object.keys(categoryData).filter(g => categoryData[g].length >= 2).sort();
+      const genres = Object.keys(categoryData).sort();
       const pillsEl = document.getElementById('genreQuickPills');
       pillsEl.innerHTML = genres.map(g => {
         const theme = genreThemes[g] || genreThemes["Drama"];
@@ -1146,14 +1538,21 @@ button,select,input{transition:all .2s ease}
                 <span class="text-xs font-normal text-gray-400">(${categoryData[g].length} titles)</span>
               </h2>
             </div>
-            <div class="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x">
-              ${categoryData[g].map(m => createCardHTML(m, true)).join('')}
+            <div class="has-arrows">
+              <div class="hscroll flex gap-4 overflow-x-auto pb-4 pt-1 snap-x">
+                ${categoryData[g].map(m => createCardHTML(m, true)).join('')}
+              </div>
             </div>
           </div>`;
       }).join('');
+
       attachThumbObservers(catList);
+      catList.querySelectorAll('.hscroll').forEach(addHorizontalArrows);
     }
 
+    // ==========================================
+    // 8. PERSONAL HUB, DNA ANALYTICS & BACKUPS
+    // ==========================================
     function switchHubList(mode) {
       activeHubList = mode;
       const bWish = document.getElementById('hubBtnWishlist');
@@ -1184,10 +1583,10 @@ button,select,input{transition:all .2s ease}
       const source = activeHubList === 'wishlist' ? wishlistTitles : watchedTitles;
       if (!source.length) {
         container.innerHTML = `
-          <div class="w-full py-10 text-center text-gray-400 space-y-2">
+          <div class="w-full py-12 text-center text-gray-400 space-y-2">
             <i class="fa-solid ${activeHubList === 'wishlist' ? 'fa-heart' : 'fa-circle-check'} text-3xl text-gray-600 block"></i>
             <p class="text-sm">Your ${activeHubList === 'wishlist' ? 'Watchlist' : 'Watched list'} is currently empty.</p>
-            <button onclick="switchTab('movies')" class="mt-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-semibold text-brand-gold border border-white/10">Browse Movies →</button>
+            <button onclick="switchTab('movies')" class="mt-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-semibold text-brand-gold border border-white/10">Explore Movies Vault →</button>
           </div>`;
         return;
       }
@@ -1195,8 +1594,105 @@ button,select,input{transition:all .2s ease}
       attachThumbObservers(container);
     }
 
+    function renderTasteDNA() {
+      const el = document.getElementById('hubStats');
+      if (!el) return;
+      const watchedObjs = watchedTitles.map(t => globalDatabase[t]).filter(Boolean);
+
+      if (!watchedObjs.length) {
+        el.innerHTML = `
+          <div class="text-sm text-gray-400 py-3 flex items-center gap-3">
+            <i class="fa-solid fa-circle-info text-brand-gold"></i>
+            <span>Mark titles as watched to unlock your personalized Taste DNA breakdown!</span>
+          </div>`;
+        return;
+      }
+
+      const genreFreq = {};
+      watchedObjs.forEach(i => { genreFreq[i.genre] = (genreFreq[i.genre] || 0) + 1; });
+      const sortedGenres = Object.entries(genreFreq).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+      const avgImdb = (watchedObjs.reduce((sum, i) => sum + parseFloat(i.rating), 0) / watchedObjs.length).toFixed(2);
+      const ratingVals = Object.values(myRatings);
+      const avgUserRate = ratingVals.length ? (ratingVals.reduce((a, b) => a + b, 0) / ratingVals.length).toFixed(1) : '–';
+
+      el.innerHTML = `
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/5">
+            <div class="text-2xl font-display font-extrabold text-white">${watchedObjs.length}</div>
+            <div class="text-xs text-gray-400">Total Watched</div>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/5">
+            <div class="text-2xl font-display font-extrabold text-brand-gold">★ ${avgImdb}</div>
+            <div class="text-xs text-gray-400">Avg IMDb of Watched</div>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/5">
+            <div class="text-2xl font-display font-extrabold text-emerald-400">${ratingVals.length}</div>
+            <div class="text-xs text-gray-400">Titles Star-Rated</div>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/5">
+            <div class="text-2xl font-display font-extrabold text-purple-400">${avgUserRate} / 5</div>
+            <div class="text-xs text-gray-400">Your Avg Star Score</div>
+          </div>
+        </div>
+
+        <div class="space-y-2.5">
+          <div class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Top Watched Genres Affinity</div>
+          ${sortedGenres.map(([g, count]) => {
+            const pct = Math.round((count / watchedObjs.length) * 100);
+            const theme = genreThemes[g] || genreThemes["Drama"];
+            return `
+              <div class="flex items-center gap-3 text-xs">
+                <span class="w-24 text-gray-300 font-medium truncate">${g}</span>
+                <div class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div class="h-full rounded-full transition-all duration-700" style="width:${pct}%; background:${theme.accent}"></div>
+                </div>
+                <span class="text-gray-400 font-bold w-12 text-right">${count} (${pct}%)</span>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    function exportUserData() {
+      const data = {
+        wishlist: wishlistTitles,
+        watched: watchedTitles,
+        ratings: myRatings,
+        exportDate: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `cinesphere-backup-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("Exported your personal cinema backup file!", "fa-download", "text-brand-gold");
+    }
+
+    function importUserData(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const parsed = JSON.parse(event.target.result);
+          if (Array.isArray(parsed.wishlist)) wishlistTitles = parsed.wishlist.filter(t => globalDatabase[t]);
+          if (Array.isArray(parsed.watched)) watchedTitles = parsed.watched.filter(t => globalDatabase[t]);
+          if (parsed.ratings && typeof parsed.ratings === 'object') myRatings = parsed.ratings;
+          updateAllCountersAndViews();
+          showToast("Imported backup data successfully!", "fa-upload", "text-emerald-400");
+        } catch (err) {
+          showToast("Failed to parse JSON backup file.", "fa-triangle-exclamation", "text-rose-400");
+        }
+      };
+      reader.readAsText(file);
+    }
+
     // ==========================================
-    // 8. INTERACTIVE DETAIL MODAL & SURPRISE ME
+    // 9. DETAILS MODAL & YOUTUBE TRAILERS
     // ==========================================
     async function openDetailModal(title) {
       const item = globalDatabase[title];
@@ -1208,13 +1704,13 @@ button,select,input{transition:all .2s ease}
       const isW = wishlistTitles.includes(item.title);
       const isWatched = watchedTitles.includes(item.title);
       const escTitle = item.title.replace(/'/g, "\\'");
+      const userRating = myRatings[item.title] || 0;
 
-      // Similar titles in same genre
       const similar = (categoryData[item.genre] || [])
         .filter(x => x.title !== item.title)
         .slice(0, 4);
 
-      const defaultSynopsis = `${item.title} (${item.year}) is a critically acclaimed ${item.genre.toLowerCase()} ${item.type === 'show' ? 'television series' : 'motion picture'} ranked #${item.rank} on the IMDb chart with an average user rating of ★ ${item.rating}. Currently available to stream on ${item.platformName}.`;
+      const defaultSynopsis = `${item.cleanName || item.title} (${item.year}) is a critically celebrated ${item.genre.toLowerCase()} ${item.type === 'show' ? 'series' : 'motion picture'} rated ★ ${item.rating} on IMDb. Streamable now on ${item.platformName}.`;
       const cachedSynopsis = summaryCache[item.type + ':' + item.title] || defaultSynopsis;
 
       content.innerHTML = `
@@ -1224,33 +1720,48 @@ button,select,input{transition:all .2s ease}
           </div>
           <div class="flex-1 space-y-4">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="px-2.5 py-0.5 rounded-md bg-brand-gold text-black font-extrabold text-xs">IMDb ★ ${item.rating}</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-brand-gold text-black font-extrabold text-xs">★ ${item.rating}</span>
               <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-gray-200 text-xs font-semibold">#${item.rank} Ranked</span>
               <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-gray-300 text-xs">${item.genre} · ${item.year}</span>
+              <span class="px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/25 text-[11px] font-semibold">${item.platformName}</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-display font-bold text-white leading-tight">${item.title}</h2>
+            <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-white leading-tight">${item.cleanName || item.title}</h2>
             <p id="modalSynopsisText" class="text-xs sm:text-sm text-gray-300 leading-relaxed max-h-36 overflow-y-auto pr-1">${cachedSynopsis}</p>
 
-            <div class="pt-2 flex flex-wrap gap-2.5">
+            <!-- Star Rating Tracker -->
+            <div class="flex items-center gap-2 pt-1 border-t border-white/10">
+              <span class="text-xs font-semibold text-gray-400">Your Rating:</span>
+              <div class="flex items-center gap-1">
+                ${[1, 2, 3, 4, 5].map(star => `
+                  <button onclick="rateTitle('${escTitle}', ${star})" class="text-base transition-transform hover:scale-125 ${userRating >= star ? 'text-brand-gold' : 'text-gray-600'}">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                `).join('')}
+              </div>
+              <span class="text-[11px] text-gray-500 ml-1">${userRating ? `${userRating}/5 Stars` : '(Tap star to rate)'}</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-1 flex flex-wrap gap-2.5">
               <button onclick="toggleWishlist('${escTitle}', event); openDetailModal('${escTitle}');" class="px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${isW ? 'bg-rose-500 text-white' : 'bg-white/10 hover:bg-white/15 text-white border border-white/15'}">
-                <i class="fa-solid fa-heart"></i> ${isW ? 'Saved in Watchlist' : 'Add to Watchlist'}
+                <i class="fa-solid fa-heart"></i> ${isW ? 'In Watchlist' : 'Add to Watchlist'}
               </button>
               <button onclick="toggleWatched('${escTitle}', event); openDetailModal('${escTitle}');" class="px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${isWatched ? 'bg-emerald-500 text-black' : 'bg-white/10 hover:bg-white/15 text-white border border-white/15'}">
                 <i class="fa-solid fa-check"></i> ${isWatched ? 'Marked Watched' : 'Mark Watched'}
               </button>
-              <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(item.title + ' ' + item.year + ' official trailer')}" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-300 border border-red-500/30 text-xs font-bold flex items-center gap-2 transition-all">
-                <i class="fa-brands fa-youtube"></i> Watch Trailer
+              <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(item.cleanName + ' ' + item.year + ' official trailer')}" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-300 border border-red-500/30 text-xs font-bold flex items-center gap-2 transition-all">
+                <i class="fa-brands fa-youtube"></i> Trailer
               </a>
             </div>
 
-            <div class="flex items-center gap-1">${[1,2,3,4,5].map(n=>`<button onclick="rateTitle('${escTitle}',${n})" class="text-lg hover:scale-125 ${(myRatings[item.title]||0)>=n?'text-brand-gold':'text-gray-600'}"><i class="fa-solid fa-star"></i></button>`).join('')}<span class="text-[11px] text-gray-400 ml-2">${myRatings[item.title]?'Your rating':'Rate it'}</span></div>
+            <!-- More in Genre -->
             <div class="pt-3 border-t border-white/10">
-              <div class="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2">More Top-Rated in ${item.genre}</div>
+              <div class="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2">More Top Titles in ${item.genre}</div>
               <div class="flex flex-wrap gap-2">
                 ${similar.map(s => {
                   const escS = s.title.replace(/'/g, "\\'");
-                  return `<button onclick="openDetailModal('${escS}')" class="px-3 py-1.5 rounded-lg bg-black/50 hover:bg-brand-gold hover:text-black border border-white/10 text-xs font-medium text-gray-200 transition-colors">
-                    ${s.title} <span class="opacity-70">★${s.rating}</span>
+                  return `<button onclick="openDetailModal('${escS}')" class="px-2.5 py-1.5 rounded-lg bg-black/50 hover:bg-brand-gold hover:text-black border border-white/10 text-xs font-medium text-gray-200 transition-colors">
+                    ${s.cleanName || s.title} <span class="opacity-70">★${s.rating}</span>
                   </button>`;
                 }).join('')}
               </div>
@@ -1262,7 +1773,7 @@ button,select,input{transition:all .2s ease}
       modal.classList.remove('hidden');
       modal.classList.add('flex');
 
-      // Fetch real poster/synopsis on the fly if not cached yet
+      // Fetch poster & synopsis asynchronously if not cached
       const realUrl = await fetchPoster(item);
       const modalImg = document.getElementById('modalPosterImg');
       if (realUrl && modalImg) modalImg.src = realUrl;
@@ -1278,17 +1789,172 @@ button,select,input{transition:all .2s ease}
       modal.classList.remove('flex');
     }
 
-    function surpriseMe() {
-      const randomTitle = allTitles[Math.floor(Math.random() * allTitles.length)];
-      showToast(`🎲 Surprise Pick: "${randomTitle}"`, "fa-dice", "text-brand-gold");
-      openDetailModal(randomTitle);
+    // ==========================================
+    // 10. REVAMPED SURPRISE ROULETTE STUDIO
+    // ==========================================
+    let surpriseFilter = 'all';
+    let currentSurpriseWinner = null;
+    let isSpinning = false;
+
+    function openSurpriseModal() {
+      const m = document.getElementById('surpriseModal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+      if (!currentSurpriseWinner) spinSurpriseWheel();
+    }
+
+    function closeSurpriseModal() {
+      const m = document.getElementById('surpriseModal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    function setSurpriseFilter(filterKey) {
+      surpriseFilter = filterKey;
+      document.querySelectorAll('.sfilter-btn').forEach(b => {
+        const active = b.dataset.sfilter === filterKey;
+        b.className = `sfilter-btn px-3 py-2 rounded-xl transition-all ${active ? 'bg-brand-gold text-black font-bold shadow-md' : 'bg-white/5 text-gray-300 hover:text-white font-medium'}`;
+      });
+      spinSurpriseWheel();
+    }
+
+    function getEligibleSurprisePool() {
+      if (surpriseFilter === 'movies') return movies;
+      if (surpriseFilter === 'shows') return tvShows;
+      if (surpriseFilter === 'pantheon') return [...movies, ...tvShows].filter(i => parseFloat(i.rating) >= 8.5);
+      if (surpriseFilter === 'hidden') return [...movies, ...tvShows].filter(i => parseFloat(i.rating) >= 7.8 && parseFloat(i.rating) <= 8.3);
+      if (surpriseFilter === 'blockbuster') {
+        const kw = ["Avengers", "Batman", "Spider-Man", "Dune", "Avatar", "Star Wars", "Fast", "Transformers", "Harry Potter", "Top Gun", "John Wick", "Deadpool", "Hunger Games", "Mission"];
+        return movies.filter(m => kw.some(k => m.title.includes(k)));
+      }
+      return [...movies, ...tvShows];
+    }
+
+    function spinSurpriseWheel() {
+      if (isSpinning) return;
+      isSpinning = true;
+      const pool = getEligibleSurprisePool();
+      const display = document.getElementById('rouletteDisplay');
+      const spinBtn = document.getElementById('spinBtn');
+      spinBtn.disabled = true;
+      spinBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Shuffling...';
+
+      let iterations = 0;
+      const interval = setInterval(() => {
+        iterations++;
+        const temp = pool[Math.floor(Math.random() * pool.length)];
+        const fallback = generateStylizedPosterDataURI(temp);
+        const poster = posterCache[temp.type + ':' + temp.title] || fallback;
+
+        display.innerHTML = `
+          <img src="${poster}" class="w-16 h-24 object-cover rounded-xl shrink-0 border border-white/10 roulette-blur" alt="Spinning" />
+          <div class="flex-1 min-w-0">
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-brand-gold">Rolling Roulette...</span>
+            <div class="text-base font-bold text-white truncate">${temp.cleanName || temp.title}</div>
+            <div class="text-xs text-gray-400">${temp.genre} · ${temp.year} · ★ ${temp.rating}</div>
+          </div>
+        `;
+
+        if (iterations >= 9) {
+          clearInterval(interval);
+          const winner = pool[Math.floor(Math.random() * pool.length)];
+          currentSurpriseWinner = winner;
+          renderWinnerDisplay(winner);
+          isSpinning = false;
+          spinBtn.disabled = false;
+          spinBtn.innerHTML = '<i class="fa-solid fa-rotate mr-1"></i> Roll Again';
+        }
+      }, 90);
+    }
+
+    function renderWinnerDisplay(item) {
+      const display = document.getElementById('rouletteDisplay');
+      const fallback = generateStylizedPosterDataURI(item);
+      const poster = posterCache[item.type + ':' + item.title] || fallback;
+
+      display.innerHTML = `
+        <img src="${poster}" data-title="${item.title.replace(/"/g, '&quot;')}" onerror="this.onerror=null;this.src='${fallback}';" class="lazy-poster w-20 h-28 object-cover rounded-xl shrink-0 border border-brand-gold/40 shadow-lg shadow-brand-gold/15 fade-in" />
+        <div class="flex-1 min-w-0 space-y-1 fade-in">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-full bg-brand-gold text-black text-[10px] font-black uppercase">Selected Pick</span>
+            <span class="text-brand-gold font-bold text-xs">★ ${item.rating}</span>
+          </div>
+          <h4 class="text-lg font-display font-extrabold text-white truncate">${item.cleanName || item.title}</h4>
+          <div class="text-xs text-gray-300">${item.genre} · ${item.year} · ${item.platformName}</div>
+          <div class="pt-1 flex gap-2">
+            <button onclick="toggleWishlist('${item.title.replace(/'/g, "\\'")}', event)" class="text-xs px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-gray-200">
+              <i class="fa-solid fa-heart mr-1 text-rose-400"></i> Watchlist
+            </button>
+            <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(item.cleanName + ' ' + item.year + ' trailer')}" target="_blank" rel="noopener" class="text-xs px-2.5 py-1 rounded-lg bg-red-600/20 hover:bg-red-600/30 text-red-300">
+              <i class="fa-brands fa-youtube mr-1"></i> Trailer
+            </a>
+          </div>
+        </div>
+      `;
+      attachThumbObservers(display);
+    }
+
+    function inspectCurrentSurprise() {
+      if (currentSurpriseWinner) {
+        closeSurpriseModal();
+        openDetailModal(currentSurpriseWinner.title);
+      }
     }
 
     // ==========================================
-    // 9. AUTOCOMPLETE TAG SYSTEM
+    // 11. QUICK SEARCH COMMAND PALETTE (⌘K / /)
+    // ==========================================
+    function openPalette() {
+      const p = document.getElementById('palette');
+      p.classList.remove('hidden');
+      p.classList.add('flex');
+      const input = document.getElementById('palInput');
+      input.value = '';
+      palSearch('');
+      setTimeout(() => input.focus(), 30);
+    }
+
+    function closePalette() {
+      const p = document.getElementById('palette');
+      p.classList.add('hidden');
+      p.classList.remove('flex');
+    }
+
+    function palSearch(query) {
+      const q = query.toLowerCase().trim();
+      const matches = allTitles
+        .filter(t => !q || t.toLowerCase().includes(q))
+        .sort((a, b) => globalDatabase[b].rating - globalDatabase[a].rating)
+        .slice(0, 8);
+
+      const list = document.getElementById('palList');
+      if (!matches.length) {
+        list.innerHTML = `<div class="p-4 text-xs text-gray-400 text-center">No titles found matching "${query}"</div>`;
+        return;
+      }
+
+      list.innerHTML = matches.map(t => {
+        const item = globalDatabase[t];
+        const esc = t.replace(/'/g, "\\'");
+        return `
+          <button onclick="closePalette(); openDetailModal('${esc}')" class="w-full text-left px-4 py-3 hover:bg-white/10 flex items-center justify-between gap-3 text-xs sm:text-sm transition-colors group">
+            <span class="text-white truncate group-hover:text-brand-gold">
+              ${item.cleanName || item.title} <span class="text-gray-500">(${item.year})</span>
+            </span>
+            <span class="text-brand-gold font-bold text-xs shrink-0 flex items-center gap-1.5">
+              <span class="text-gray-400 font-normal">${item.type === 'show' ? 'TV' : 'Film'} ·</span>
+              ★ ${item.rating}
+            </span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // ==========================================
+    // 12. AUTOCOMPLETE TAG CHIP INPUT
     // ==========================================
     const activeTags = {
-      recTags: ["Inception", "The Dark Knight", "Interstellar"],
+      recTags: ["Inception", "The Dark Knight", "Dune: Part Two"],
       myTags: ["The Godfather", "Pulp Fiction", "The Dark Knight", "Goodfellas"],
       friendTags: ["Inception", "The Dark Knight", "Se7en", "The Prestige"]
     };
@@ -1312,19 +1978,13 @@ button,select,input{transition:all .2s ease}
         return `
           <div onmousedown="addTag('${esc}','${tagId}','${inputId}','${suggestId}',${max})" class="px-4 py-2.5 hover:bg-white/10 cursor-pointer flex items-center justify-between text-xs sm:text-sm transition-colors">
             <div>
-              <span class="font-semibold text-white">${m}</span>
+              <span class="font-semibold text-white">${item.cleanName || m}</span>
               <span class="text-gray-400 ml-1.5">(${item.year})</span>
             </div>
             <span class="text-[11px] font-bold text-brand-gold">${item.genre} · ★${item.rating}</span>
           </div>`;
       }).join('');
     }
-
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.autocomplete-wrapper')) {
-        document.querySelectorAll('.suggestions-box').forEach(b => b.classList.add('hidden'));
-      }
-    });
 
     function addTag(title, tagId, inputId, suggestId, max) {
       if (activeTags[tagId].length >= max) {
@@ -1354,8 +2014,8 @@ button,select,input{transition:all .2s ease}
         const esc = t.replace(/'/g, "\\'");
         const item = globalDatabase[t];
         return `
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-brand-gold text-black font-bold text-xs shadow-sm">
-            <span>${t}</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-brand-gold text-black font-extrabold text-xs shadow-sm">
+            <span>${item ? (item.cleanName || t) : t}</span>
             ${item ? `<span class="text-[10px] opacity-75">(${item.genre})</span>` : ''}
             <button onclick="removeTag('${esc}','${tagId}')" class="w-4 h-4 rounded-full bg-black/15 hover:bg-black/30 flex items-center justify-center text-[10px]">✕</button>
           </div>`;
@@ -1364,7 +2024,7 @@ button,select,input{transition:all .2s ease}
 
     function prefillFromWishlist(tagId) {
       if (!wishlistTitles.length) {
-        showToast("Your Watchlist is empty! Add some heart icons first.", "fa-circle-exclamation", "text-amber-400");
+        showToast("Your Watchlist is empty! Tap some heart icons first.", "fa-circle-exclamation", "text-amber-400");
         return;
       }
       const limit = tagId === 'recTags' ? 5 : 10;
@@ -1374,7 +2034,7 @@ button,select,input{transition:all .2s ease}
     }
 
     // ==========================================
-    // 10. REAL MULTI-FACTOR RECOMMENDATION ENGINE
+    // 13. REAL RECOMMENDATION & COMPATIBILITY
     // ==========================================
     let rankedRecommendations = [];
     let recBatchOffset = 0;
@@ -1383,11 +2043,10 @@ button,select,input{transition:all .2s ease}
     function generateRecommendation() {
       const selected = activeTags.recTags.map(t => globalDatabase[t]).filter(Boolean);
       if (!selected.length) {
-        showToast("Please select at least 1 title you enjoyed first!", "fa-circle-exclamation", "text-amber-400");
+        showToast("Please add at least 1 seed title first!", "fa-circle-exclamation", "text-amber-400");
         return;
       }
 
-      // Compute user taste profile
       const genreCounts = {};
       const platCounts = {};
       let avgYear = 0;
@@ -1398,22 +2057,21 @@ button,select,input{transition:all .2s ease}
       });
       avgYear = Math.round(avgYear / selected.length);
 
-      // Score all candidate titles not already in recTags or watchedTitles
       const candidates = allTitles
         .filter(t => !activeTags.recTags.includes(t))
         .map(t => {
           const item = globalDatabase[t];
-          const genreWeight = (genreCounts[item.genre] || 0) * 28;
-          const platWeight = (platCounts[item.platformName] || 0) * 8;
+          const genreWeight = (genreCounts[item.genre] || 0) * 26;
+          const platWeight = (platCounts[item.platformName] || 0) * 7;
           const eraDiff = Math.abs(item.year - avgYear);
-          const eraWeight = Math.max(0, 18 - (eraDiff * 0.45));
-          const ratingWeight = (parseFloat(item.rating) - 7.8) * 22;
-          const totalScore = Math.min(99, Math.round(45 + genreWeight + platWeight + eraWeight + ratingWeight));
+          const eraWeight = Math.max(0, 18 - (eraDiff * 0.4));
+          const ratingWeight = (parseFloat(item.rating) - 6.5) * 15;
+          const totalScore = Math.min(99, Math.round(40 + genreWeight + platWeight + eraWeight + ratingWeight));
 
           const reasons = [];
           if (genreCounts[item.genre]) reasons.push(`Matches your love for ${item.genre}`);
-          if (eraDiff <= 8) reasons.push(`From your preferred ${Math.floor(item.year / 10) * 10}s era`);
-          reasons.push(`IMDb ★ ${item.rating} on ${item.platformName}`);
+          if (eraDiff <= 7) reasons.push(`From your preferred ${Math.floor(item.year / 10) * 10}s era`);
+          reasons.push(`★ ${item.rating} on ${item.platformName}`);
 
           return { item, score: totalScore, reason: reasons.slice(0, 2).join(' · ') };
         })
@@ -1444,7 +2102,7 @@ button,select,input{transition:all .2s ease}
               <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold">
                 ${score}% Taste Match
               </div>
-              <h4 class="font-bold text-white text-base group-hover:text-brand-gold transition-colors truncate">${item.title}</h4>
+              <h4 class="font-bold text-white text-sm group-hover:text-brand-gold transition-colors truncate">${item.cleanName || item.title}</h4>
               <div class="text-xs text-gray-400">${item.genre} · ${item.year} · ★ ${item.rating}</div>
               <p class="text-[11px] text-brand-gold/90 line-clamp-2">${reason}</p>
             </div>
@@ -1459,13 +2117,10 @@ button,select,input{transition:all .2s ease}
       recBatchOffset += 3;
       renderRecommendationBatch();
       if (rejectsLeft === 0) {
-        showToast("Final set of curated recommendations unlocked!", "fa-sparkles", "text-brand-gold");
+        showToast("Final set of top matches unlocked!", "fa-sparkles", "text-brand-gold");
       }
     }
 
-    // ==========================================
-    // 11. DEEP COMPATIBILITY ANALYZER
-    // ==========================================
     function getTopProperties(objs, prop, n) {
       const counts = {};
       objs.forEach(o => { if (o && o[prop]) counts[o[prop]] = (counts[o[prop]] || 0) + 1; });
@@ -1480,12 +2135,12 @@ button,select,input{transition:all .2s ease}
     }
 
     function loadDemoCompatibility() {
-      activeTags.myTags = ["Inception", "The Dark Knight", "Interstellar", "The Prestige", "Se7en"];
-      activeTags.friendTags = ["The Dark Knight", "The Matrix", "Memento", "Blade Runner", "Prisoners"];
+      activeTags.myTags = ["Inception", "The Dark Knight", "Dune: Part Two", "The Prestige", "Se7en"];
+      activeTags.friendTags = ["The Dark Knight", "The Matrix", "Blade Runner 2049", "Memento", "Prisoners"];
       renderTags('myTags');
       renderTags('friendTags');
       calculateCompatibility();
-      showToast("Loaded Demo Compatibility Profiles!", "fa-flask", "text-purple-400");
+      showToast("Loaded demo compatibility profiles!", "fa-flask", "text-purple-400");
     }
 
     function calculateCompatibility() {
@@ -1504,36 +2159,23 @@ button,select,input{transition:all .2s ease}
       scoreBox.classList.remove('hidden');
 
       const exactMatches = m.filter(x => f.includes(x));
-      if (exactMatches.length > 5) {
-        scoreEl.innerHTML = `<span class="text-rose-500 text-3xl">CLONE ALERT</span>`;
-        msgEl.textContent = "More than 5 identical picks — you two share the exact same brain!";
-        breakdownEl.innerHTML = '';
-        jointEl.innerHTML = '';
-        return;
-      }
-
       const mObjs = m.map(t => globalDatabase[t]).filter(Boolean);
       const fObjs = f.map(t => globalDatabase[t]).filter(Boolean);
 
-      // 1. Exact Title Overlap (up to 35 pts)
       const matchScore = Math.min(35, exactMatches.length * 15);
-
-      // 2. Genre Synergy (up to 35 pts)
       const mGenres = getTopProperties(mObjs, 'genre', 3);
       const fGenres = getTopProperties(fObjs, 'genre', 3);
       const sharedGenres = mGenres.filter(g => fGenres.includes(g));
       const genreScore = Math.min(35, sharedGenres.length * 14 + 7);
 
-      // 3. Era & Release Decade Proximity (up to 15 pts)
       const mAvgYear = mObjs.reduce((s, o) => s + o.year, 0) / mObjs.length;
       const fAvgYear = fObjs.reduce((s, o) => s + o.year, 0) / fObjs.length;
       const yearDiff = Math.abs(mAvgYear - fAvgYear);
       const eraScore = Math.max(0, Math.round(15 - (yearDiff * 0.5)));
 
-      // 4. Critical Rating Vibe & Platform (up to 15 pts)
       const mAvgRate = mObjs.reduce((s, o) => s + parseFloat(o.rating), 0) / mObjs.length;
       const fAvgRate = fObjs.reduce((s, o) => s + parseFloat(o.rating), 0) / fObjs.length;
-      const vibeScore = Math.abs(mAvgRate - fAvgRate) <= 0.35 ? 15 : 8;
+      const vibeScore = Math.abs(mAvgRate - fAvgRate) <= 0.4 ? 15 : 8;
 
       const total = Math.min(100, matchScore + genreScore + eraScore + vibeScore);
 
@@ -1553,19 +2195,19 @@ button,select,input{transition:all .2s ease}
           label: "Genre DNA Alignment",
           pts: `+${genreScore}%`,
           pct: Math.round((genreScore / 35) * 100),
-          desc: sharedGenres.length ? `Strong shared passion for ${sharedGenres.join(' & ')}.` : `Complementary mix: ${mGenres[0] || 'Drama'} meets ${fGenres[0] || 'Action'}.`
+          desc: sharedGenres.length ? `Strong shared passion for ${sharedGenres.join(' & ')}.` : `Complementary tastes: ${mGenres[0] || 'Drama'} meets ${fGenres[0] || 'Action'}.`
         },
         {
           label: "Era & Decade Sync",
           pts: `+${eraScore}%`,
           pct: Math.round((eraScore / 15) * 100),
-          desc: `Average release years are ${Math.round(mAvgYear)} vs ${Math.round(fAvgYear)} (${Math.round(yearDiff)} yrs apart).`
+          desc: `Average release years: ${Math.round(mAvgYear)} vs ${Math.round(fAvgYear)} (${Math.round(yearDiff)} yrs apart).`
         },
         {
           label: "IMDb Critical Standard",
           pts: `+${vibeScore}%`,
           pct: Math.round((vibeScore / 15) * 100),
-          desc: `Your average rating is ★${mAvgRate.toFixed(2)} vs Friend's ★${fAvgRate.toFixed(2)}.`
+          desc: `Your average rating is ★${mAvgRate.toFixed(1)} vs Friend's ★${fAvgRate.toFixed(1)}.`
         }
       ];
 
@@ -1582,25 +2224,24 @@ button,select,input{transition:all .2s ease}
         </li>
       `).join('');
 
-      // Find the ideal joint movie night pick that neither has listed yet
       const targetGenre = sharedGenres[0] || mGenres[0] || "Drama";
       const jointCandidate = (categoryData[targetGenre] || movies).find(item => !m.includes(item.title) && !f.includes(item.title)) || movies[0];
       const escJ = jointCandidate.title.replace(/'/g, "\\'");
 
       jointEl.innerHTML = `
         <div class="space-y-1">
-          <div class="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Co-Op Watch Night Suggestion</div>
-          <div class="text-base font-bold text-white">Watch <span class="text-brand-gold">${jointCandidate.title}</span> (${jointCandidate.year}) Together</div>
+          <div class="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Co-Op Watch Night Recommendation</div>
+          <div class="text-base font-bold text-white">Watch <span class="text-brand-gold">${jointCandidate.cleanName || jointCandidate.title}</span> (${jointCandidate.year}) Together</div>
           <div class="text-xs text-gray-300">Bridges both of your tastes in ${jointCandidate.genre} · Rated ★ ${jointCandidate.rating} on ${jointCandidate.platformName}</div>
         </div>
-        <button onclick="openDetailModal('${escJ}')" class="px-4 py-2.5 rounded-xl bg-brand-gold text-black font-bold text-xs shrink-0 hover:bg-amber-400 transition-all">
-          Inspect Pick →
+        <button onclick="openDetailModal('${escJ}')" class="px-4 py-2.5 rounded-xl bg-brand-gold text-black font-extrabold text-xs shrink-0 hover:bg-amber-400 transition-all">
+          Inspect Movie →
         </button>
       `;
     }
 
     // ==========================================
-    // 12. NAVIGATION & API MODAL CONTROLS
+    // 14. NAVIGATION & KEYBOARD SHORTCUTS
     // ==========================================
     function switchTab(tabKey) {
       const tabs = ['discover', 'movies', 'shows', 'categories', 'hub'];
@@ -1608,7 +2249,10 @@ button,select,input{transition:all .2s ease}
         const pane = document.getElementById(`tab-${k}`);
         const nav = document.getElementById(`nav-${k}`);
         if (k === tabKey) {
-          pane.classList.remove('hidden');pane.classList.remove('fade-in');void pane.offsetWidth;pane.classList.add('fade-in');
+          pane.classList.remove('hidden');
+          pane.classList.remove('fade-in');
+          void pane.offsetWidth;
+          pane.classList.add('fade-in');
           nav.className = "nav-pill px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-brand-gold text-black shadow-md";
         } else {
           pane.classList.add('hidden');
@@ -1618,56 +2262,53 @@ button,select,input{transition:all .2s ease}
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function openApiModal() {
-      const m = document.getElementById('apiModal');
-      m.classList.remove('hidden');
-      m.classList.add('flex');
-    }
-
-    function closeApiModal() {
-      const m = document.getElementById('apiModal');
-      m.classList.add('hidden');
-      m.classList.remove('flex');
-    }
-
-    function saveApiKey() {
-      const val = document.getElementById('tmdbKeyInput').value.trim();
-      tmdbApiKey = val;
-      Object.keys(posterCache).forEach(k => delete posterCache[k]);
-      closeApiModal();
-      renderDiscoverRows();
-      filterAndRenderMovies();
-      filterAndRenderShows();
-      renderCategoriesTab();
-      renderHubList();
-      showToast(val ? "TMDB API Key saved! Refreshing theatrical posters..." : "Using built-in hybrid TVMaze, Wikipedia & SVG poster engine.", "fa-images", "text-emerald-400");
-    }
-
-    // Attach filter listeners
-    ['searchMovies', 'filterMoviesGenre', 'filterMoviesPlatform', 'sortMovies'].forEach(id => {
-      const el = document.getElementById(id);
-      el.addEventListener(id === 'searchMovies' ? 'input' : 'change', filterAndRenderMovies);
-    });
-
-    ['searchShows', 'filterShowsGenre', 'filterShowsPlatform'].forEach(id => {
-      const el = document.getElementById(id);
-      el.addEventListener(id === 'searchShows' ? 'input' : 'change', filterAndRenderShows);
-    });
-
-    // Close modals on Escape key
+    // Global Key Handlers (⌘K, /, ESC)
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
+      const isInput = /INPUT|TEXTAREA|SELECT/.test((document.activeElement || {}).tagName);
+      if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !isInput)) {
+        e.preventDefault();
+        openPalette();
+      } else if (e.key === 'Escape') {
+        closePalette();
         closeDetailModal();
-        closeApiModal();
+        closeSurpriseModal();
       }
     });
 
-    // Initialize Application
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.autocomplete-wrapper')) {
+        document.querySelectorAll('.suggestions-box').forEach(b => b.classList.add('hidden'));
+      }
+    });
+
+    // Attach Catalog Input Listeners
+    ['searchMovies', 'filterMoviesGenre', 'filterMoviesDecade', 'sortMovies'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener(id === 'searchMovies' ? 'input' : 'change', () => filterAndRenderMovies(true));
+    });
+
+    ['searchShows', 'filterShowsGenre', 'sortShows'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener(id === 'searchShows' ? 'input' : 'change', () => filterAndRenderShows(true));
+    });
+
+    // Auto-advance hero banner every 8 seconds if not hovered
+    let heroHovered = false;
+    const heroEl = document.getElementById('heroBanner');
+    heroEl.onmouseenter = () => { heroHovered = true; };
+    heroEl.onmouseleave = () => { heroHovered = false; };
+    setInterval(() => {
+      if (!heroHovered && !document.hidden && !document.getElementById('tab-discover').classList.contains('hidden')) {
+        renderHeroSpotlight(currentSpotlightIdx + 1);
+      }
+    }, 8000);
+
+    // Bootstrap CineSphere Pro
     window.addEventListener('DOMContentLoaded', () => {
       populateGenreSelects();
-      renderDiscoverRows();
-      filterAndRenderMovies();
-      filterAndRenderShows();
+      renderDiscoverTab();
+      filterAndRenderMovies(true);
+      filterAndRenderShows(true);
       renderCategoriesTab();
       renderTags('recTags');
       renderTags('myTags');
@@ -1676,63 +2317,5 @@ button,select,input{transition:all .2s ease}
       generateRecommendation();
     });
   </script>
-<script>
-const $=id=>document.getElementById(id);
-// poster loader: concurrency limit, iTunes artwork for films, persistent cache
-(()=>{const orig=fetchPoster;let act=0;const q=[];let t;
-fetchPoster=async function(item){const k=item.type+':'+item.title;if(posterCache[k]!==undefined)return posterCache[k];
- if(act>=5)await new Promise(r=>q.push(r));act++;
- try{const nm=item.name||item.title;
-  if(item.type==='movie'&&!tmdbApiKey){try{const r=await fetch('https://itunes.apple.com/search?media=movie&entity=movie&limit=5&term='+encodeURIComponent(nm));if(r.ok){const d=await r.json();const n=x=>String(x).toLowerCase().replace(/[^a-z0-9]/g,'');const m=(d.results||[]).find(x=>n(x.trackName)===n(nm)&&Math.abs(+String(x.releaseDate).slice(0,4)-item.year)<=1);if(m&&m.artworkUrl100){const u=m.artworkUrl100.replace('100x100bb','600x900bb');posterCache[k]=u;if(m.longDescription&&!summaryCache[k])summaryCache[k]=m.longDescription;return u}}}catch(e){}}
-  const res=await orig(item);
-  clearTimeout(t);t=setTimeout(()=>{try{localStorage.setItem('cs_posters',JSON.stringify(Object.fromEntries(Object.entries(posterCache).filter(e=>e[1]))))}catch(e){}},900);
-  return res}finally{act--;const n=q.shift();n&&n()}}})();
-
-function decadeOk(i){const e=$('dec-'+i.type);const v=e&&e.value;return !v||v==='All'||Math.floor(i.year/10)*10==v}
-function rateTitle(t,n){if(myRatings[t]===n)delete myRatings[t];else myRatings[t]=n;updateAllCountersAndViews();openDetailModal(t)}
-
-// quick search palette
-document.body.insertAdjacentHTML('beforeend','<div id="palette" class="fixed inset-0 z-[60] hidden items-start justify-center p-4 pt-24 bg-black/70 backdrop-blur-md" onclick="if(event.target.id===\'palette\')closePalette()"><div class="glass-card w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl animate-fadeIn"><div class="flex items-center gap-3 px-4 border-b border-white/10"><i class="fa-solid fa-magnifying-glass text-gray-400"></i><input id="palInput" oninput="palSearch(this.value)" placeholder="Search any movie or show..." class="flex-1 bg-transparent py-4 text-sm text-white placeholder-gray-500 focus:outline-none"><kbd class="text-[10px] px-1.5 py-0.5 rounded bg-white/10 text-gray-400">ESC</kbd></div><div id="palList" class="max-h-80 overflow-y-auto divide-y divide-white/5"></div></div></div>');
-function openPalette(){const p=$('palette');p.classList.remove('hidden');p.classList.add('flex');$('palInput').value='';palSearch('');setTimeout(()=>$('palInput').focus(),30)}
-function closePalette(){const p=$('palette');p.classList.add('hidden');p.classList.remove('flex')}
-function palSearch(q){q=q.toLowerCase().trim();const r=allTitles.filter(t=>!q||t.toLowerCase().includes(q)).sort((a,b)=>globalDatabase[b].rating-globalDatabase[a].rating).slice(0,8);
- $('palList').innerHTML=r.map(t=>{const i=globalDatabase[t];return `<button onclick="closePalette();openDetailModal('${t.replace(/'/g,"\\'")}')" class="w-full text-left px-4 py-2.5 hover:bg-white/10 flex justify-between gap-3 text-sm"><span class="text-white truncate">${t} <span class="text-gray-500">(${i.year})</span></span><span class="text-brand-gold text-xs font-bold shrink-0">${i.type==='show'?'TV':'Film'} · ★${i.rating}</span></button>`}).join('')||'<div class="p-4 text-sm text-gray-400">No matches found</div>'}
-document.addEventListener('keydown',e=>{const typing=/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName);
- if((e.key==='k'&&(e.ctrlKey||e.metaKey))||(e.key==='/'&&!typing)){e.preventDefault();openPalette()}
- else if(e.key==='Escape')closePalette();
- else if(e.key==='Enter'&&document.activeElement.id==='palInput'){const b=$('palList').querySelector('button');b&&b.click()}});
-$('detailModal').addEventListener('click',e=>{if(e.target.id==='detailModal')closeDetailModal()});
-
-// hub: taste profile + export/import
-function renderHubStats(){const el=$('hubStats');if(!el)return;const w=watchedTitles.map(t=>globalDatabase[t]).filter(Boolean);
- if(!w.length){el.innerHTML='<p class="text-sm text-gray-400">Mark titles as watched to unlock your taste profile.</p>';return}
- const c={};w.forEach(i=>c[i.genre]=(c[i.genre]||0)+1);const top=Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,6);
- const avg=(w.reduce((a,i)=>a+ +i.rating,0)/w.length).toFixed(2);const rv=Object.values(myRatings);const my=rv.length?(rv.reduce((a,b)=>a+b,0)/rv.length).toFixed(1):'–';
- const stat=(v,l)=>`<div><div class="text-2xl font-display font-bold text-white">${v}</div><div class="text-xs text-gray-400">${l}</div></div>`;
- el.innerHTML=`<div class="flex flex-wrap gap-8 mb-5">${stat(w.length,'Watched')}${stat('★ '+avg,'Avg IMDb of watched')}${stat(rv.length,'Titles rated')}${stat(my+' / 5','Your avg rating')}</div><div class="space-y-2">${top.map(([g,n])=>`<div class="flex items-center gap-3 text-xs"><span class="w-24 text-gray-300">${g}</span><div class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden"><div class="h-full rounded-full transition-all duration-700" style="width:${n/top[0][1]*100}%;background:${(genreThemes[g]||genreThemes.Drama).accent}"></div></div><span class="text-gray-400 w-5 text-right">${n}</span></div>`).join('')}</div>`}
-function exportData(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({wish:wishlistTitles,watched:watchedTitles,ratings:myRatings},null,1)],{type:'application/json'}));a.download='cinesphere-data.json';a.click()}
-function importData(e){const f=e.target.files[0];if(!f)return;f.text().then(t=>{try{const d=JSON.parse(t);wishlistTitles=(d.wish||[]).filter(x=>globalDatabase[x]);watchedTitles=(d.watched||[]).filter(x=>globalDatabase[x]);myRatings=d.ratings||{};updateAllCountersAndViews();showToast('Data imported','fa-file-import','text-emerald-400')}catch(err){showToast('Invalid file','fa-triangle-exclamation','text-amber-400')}})}
-(()=>{const u=updateAllCountersAndViews;updateAllCountersAndViews=function(){u();renderHubStats()}})();
-
-// discover: more rows + mood picker
-function makeRow(id,icon,ic,title,sub,items){const d=document.createElement('div');d.className='space-y-4';d.innerHTML=`<div><h2 class="text-xl sm:text-2xl font-display font-bold text-white flex items-center gap-2"><i class="fa-solid ${icon} ${ic}"></i> ${title}</h2><p class="text-xs sm:text-sm text-gray-400">${sub}</p></div><div id="${id}" class="hscroll flex gap-4 overflow-x-auto pb-4 pt-1 snap-x">${items.map(i=>createCardHTML(i,true)).join('')}</div>`;$('tab-discover').appendChild(d);attachThumbObservers($(id))}
-const moods={'😂 Laugh':['Comedy'],'😱 Thrills':['Thriller','Crime'],'🧠 Mind-bend':['Sci-Fi'],'⚔️ Epic':['Action','Fantasy','War'],'💔 Feels':['Drama','Romance'],'👻 Scare':['Horror'],'✨ Animated':['Animation'],'🌍 Learn':['Documentary']};
-function pickMood(k){const g=moods[k];const pool=[...movies,...tvShows].filter(i=>g.includes(i.genre)&&+i.rating>=8.0).sort(()=>Math.random()-.5).slice(0,12);$('moodRow').innerHTML=pool.map(i=>createCardHTML(i,true)).join('');attachThumbObservers($('moodRow'));document.querySelectorAll('[data-mood]').forEach(b=>b.classList.toggle('!bg-brand-gold',b.dataset.mood===k));document.querySelectorAll('[data-mood]').forEach(b=>b.classList.toggle('!text-black',b.dataset.mood===k))}
-function addArrows(el){const p=el.parentElement;if(p.classList.contains('has-arrows'))return;p.classList.add('has-arrows');
- [['left','fa-chevron-left',-1],['right','fa-chevron-right',1]].forEach(([s,ic,d])=>{const b=document.createElement('button');b.className='row-arrow';b.style[s]='-10px';b.innerHTML=`<i class="fa-solid ${ic}"></i>`;b.onclick=()=>el.scrollBy({left:d*el.clientWidth*.8,behavior:'smooth'});p.appendChild(b)})}
-window.addEventListener('DOMContentLoaded',()=>{
- spotlightTitles.push({title:"Oppenheimer",tagline:"The world forever changes.",blurb:"The story of J. Robert Oppenheimer's role in developing the atomic bomb during World War II, and the moral weight that followed."},{title:"Arcane",tagline:"Two sisters. One city divided.",blurb:"Set in utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League of Legends champions and the power that tears them apart."});
- renderHeroSpotlight(0);
- const hs=document.createElement('div');hs.className='glass-card rounded-3xl p-6 sm:p-8 space-y-4';hs.innerHTML='<div class="flex items-center justify-between flex-wrap gap-2"><h2 class="text-2xl font-display font-bold text-white">Your Taste Profile</h2><div class="flex gap-2"><button onclick="exportData()" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-gray-200"><i class="fa-solid fa-download mr-1"></i>Export</button><label class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-gray-200 cursor-pointer"><i class="fa-solid fa-upload mr-1"></i>Import<input type="file" accept=".json" class="hidden" onchange="importData(event)"></label></div></div><div id="hubStats"></div>';$('recSection').before(hs);renderHubStats();
- ['movie','show'].forEach(t=>{const sel=document.createElement('select');sel.id='dec-'+t;sel.className='px-3.5 py-2.5 bg-black/50 border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-brand-gold cursor-pointer';sel.innerHTML='<option value="All">All Decades</option>'+[2020,2010,2000,1990,1980,1970,1960,1950,1940,1920].map(d=>`<option value="${d}">${d}s</option>`).join('');sel.onchange=t==='movie'?filterAndRenderMovies:filterAndRenderShows;(t==='movie'?$('filterMoviesGenre'):$('filterShowsGenre')).parentElement.appendChild(sel)});
- const m=document.createElement('div');m.className='space-y-4';m.innerHTML='<div><h2 class="text-xl sm:text-2xl font-display font-bold text-white flex items-center gap-2"><i class="fa-solid fa-masks-theater text-rose-400"></i> What\'s Your Mood?</h2><p class="text-xs sm:text-sm text-gray-400">Pick a vibe and get a fresh, highly rated lineup</p></div><div class="flex flex-wrap gap-2">'+Object.keys(moods).map(k=>`<button data-mood="${k}" onclick="pickMood('${k}')" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-semibold text-gray-200">${k}</button>`).join('')+'</div><div id="moodRow" class="hscroll flex gap-4 overflow-x-auto pb-4 pt-1 snap-x"></div>';$('tab-discover').appendChild(m);pickMood('🧠 Mind-bend');
- const all=[...movies,...tvShows];
- makeRow('freshRow','fa-sparkles','text-emerald-400','Fresh Additions','Newly added acclaimed films & series',all.filter(i=>i.isNew&&+i.rating>=8.3).sort((a,b)=>b.rating-a.rating).slice(0,18));
- makeRow('gemsRow','fa-gem','text-cyan-300','Hidden Gems','Beloved classics that deserve another look',all.filter(i=>!i.isNew&&+i.rating>=8.0&&+i.rating<8.2).sort((a,b)=>hashString(a.title)-hashString(b.title)).slice(0,18));
- document.querySelectorAll('#discoverPantheonRow,#discoverMindRow,#discoverTvRow,#moodRow,#freshRow,#gemsRow,#categoriesList .snap-x').forEach(addArrows);
- let hover=false;const hb=$('heroBanner');hb.onmouseenter=()=>hover=true;hb.onmouseleave=()=>hover=false;
- setInterval(()=>{if(!hover&&!document.hidden&&!$('tab-discover').classList.contains('hidden'))renderHeroSpotlight(currentSpotlightIdx+1)},7000);
-});
-</script>
 </body>
 </html>
